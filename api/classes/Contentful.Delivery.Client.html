@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    contentful.php - API Documentation &raquo; \Contentful\Delivery\Client
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">contentful.php - API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Contentful.html">Contentful</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Client constructor.">
+            <span class="description">Client constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_getAsset" title="getAsset :: ">
+            <span class="description"></span><pre>getAsset</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getAssets" title="getAssets :: ">
+            <span class="description"></span><pre>getAssets</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getContentType" title="getContentType :: ">
+            <span class="description"></span><pre>getContentType</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getContentTypes" title="getContentTypes :: ">
+            <span class="description"></span><pre>getContentTypes</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getEntries" title="getEntries :: ">
+            <span class="description"></span><pre>getEntries</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getEntry" title="getEntry :: ">
+            <span class="description"></span><pre>getEntry</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSpace" title="getSpace :: ">
+            <span class="description"></span><pre>getSpace</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSynchronizationManager" title="getSynchronizationManager :: Get an instance of the synchronization manager.">
+            <span class="description">Get an instance of the synchronization manager.</span><pre>getSynchronizationManager</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isPreview" title="isPreview :: Returns true when using the Preview API">
+            <span class="description">Returns true when using the Preview API</span><pre>isPreview</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_reviveJson" title="reviveJson :: Revive JSON previously cached.">
+            <span class="description">Revive JSON previously cached.</span><pre>reviveJson</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                <li class="method protected">
+                            <a href="#method_decodeJson" title="decodeJson :: ">
+                                <span class="description"></span><pre>decodeJson</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method protected">
+                            <a href="#method_request" title="request :: ">
+                                <span class="description"></span><pre>request</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Client</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Contentful.Client.html">\Contentful\Client</a>
+                                                        </small>
+                <p class="short_description">A Client is used to communicate the Contentful Delivery API.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>A Client is only responsible for one Space. When access to multiple spaces is required, create multiple Clients.</p>
+<p>This class can be configured to use the Preview API instead of the Delivery API. This grants access to not yet published content.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        api
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Client constructor.</h2>
+                            <pre>__construct(string $token, string $baseUri, array $headers = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$token</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$baseUri</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$headers</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_decodeJson"></a>
+                        <div class="element clickable method protected  method_decodeJson" data-toggle="collapse" data-target=".method_decodeJson .collapse">
+                            <h2>decodeJson</h2>
+                            <pre>decodeJson(string $json) : object|array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>On invalid JSON</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$json</h4>
+                                                <code>string</code><p><p>JSON encoded object or array</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>object|array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAsset"></a>
+                        <div class="element clickable method public  method_getAsset" data-toggle="collapse" data-target=".method_getAsset .collapse">
+                            <h2>getAsset</h2>
+                            <pre>getAsset(string $id) : \Contentful\Delivery\Asset</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.Asset.html">\Contentful\Delivery\Asset</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAssets"></a>
+                        <div class="element clickable method public  method_getAssets" data-toggle="collapse" data-target=".method_getAssets .collapse">
+                            <h2>getAssets</h2>
+                            <pre>getAssets(\Contentful\Query|null $query = null) : \Contentful\ResourceArray</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$query</h4>
+                                                <code><a href="../classes/Contentful.Query.html">\Contentful\Query</a>|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.ResourceArray.html">\Contentful\ResourceArray</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getContentType"></a>
+                        <div class="element clickable method public  method_getContentType" data-toggle="collapse" data-target=".method_getContentType .collapse">
+                            <h2>getContentType</h2>
+                            <pre>getContentType(string $id) : \Contentful\Delivery\ContentType</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.ContentType.html">\Contentful\Delivery\ContentType</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getContentTypes"></a>
+                        <div class="element clickable method public  method_getContentTypes" data-toggle="collapse" data-target=".method_getContentTypes .collapse">
+                            <h2>getContentTypes</h2>
+                            <pre>getContentTypes(\Contentful\Query|null $query = null) : \Contentful\ResourceArray</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$query</h4>
+                                                <code><a href="../classes/Contentful.Query.html">\Contentful\Query</a>|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.ResourceArray.html">\Contentful\ResourceArray</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getEntries"></a>
+                        <div class="element clickable method public  method_getEntries" data-toggle="collapse" data-target=".method_getEntries .collapse">
+                            <h2>getEntries</h2>
+                            <pre>getEntries(\Contentful\Query $query = null) : \Contentful\ResourceArray</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$query</h4>
+                                                <code><a href="../classes/Contentful.Query.html">\Contentful\Query</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.ResourceArray.html">\Contentful\ResourceArray</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getEntry"></a>
+                        <div class="element clickable method public  method_getEntry" data-toggle="collapse" data-target=".method_getEntry .collapse">
+                            <h2>getEntry</h2>
+                            <pre>getEntry(string $id) : \Contentful\Delivery\EntryInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.EntryInterface.html">\Contentful\Delivery\EntryInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getSpace"></a>
+                        <div class="element clickable method public  method_getSpace" data-toggle="collapse" data-target=".method_getSpace .collapse">
+                            <h2>getSpace</h2>
+                            <pre>getSpace() : \Contentful\Delivery\Space</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.Space.html">\Contentful\Delivery\Space</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getSynchronizationManager"></a>
+                        <div class="element clickable method public  method_getSynchronizationManager" data-toggle="collapse" data-target=".method_getSynchronizationManager .collapse">
+                            <h2>Get an instance of the synchronization manager.</h2>
+                            <pre>getSynchronizationManager() : \Contentful\Delivery\Synchronization\Manager</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>If this method is called while using the Preview API.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            https://www.contentful.com/developers/docs/concepts/sync/
+                                                                                                                <p>Sync API</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.Synchronization.Manager.html">\Contentful\Delivery\Synchronization\Manager</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isPreview"></a>
+                        <div class="element clickable method public  method_isPreview" data-toggle="collapse" data-target=".method_isPreview .collapse">
+                            <h2>Returns true when using the Preview API</h2>
+                            <pre>isPreview() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            https://www.contentful.com/developers/docs/references/content-preview-api/#/reference
+                                                                                                                <p>Preview API Reference</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_request"></a>
+                        <div class="element clickable method protected  method_request" data-toggle="collapse" data-target=".method_request .collapse">
+                            <h2>request</h2>
+                            <pre>request(string $method, string $path, array $options = array()) : array|object</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array|object</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_reviveJson"></a>
+                        <div class="element clickable method public  method_reviveJson" data-toggle="collapse" data-target=".method_reviveJson .collapse">
+                            <h2>Revive JSON previously cached.</h2>
+                            <pre>reviveJson(string $json) : \Contentful\Delivery\Asset|\Contentful\Delivery\ContentType|\Contentful\Delivery\DynamicEntry|\Contentful\Delivery\Space|\Contentful\Delivery\Synchronization\DeletedAsset|\Contentful\Delivery\Synchronization\DeletedEntry|\Contentful\ResourceArray</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>When attemptiting to revive JSON belonging to a different space</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$json</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.Asset.html">\Contentful\Delivery\Asset</a>|<a href="../classes/Contentful.Delivery.ContentType.html">\Contentful\Delivery\ContentType</a>|<a href="../classes/Contentful.Delivery.DynamicEntry.html">\Contentful\Delivery\DynamicEntry</a>|<a href="../classes/Contentful.Delivery.Space.html">\Contentful\Delivery\Space</a>|<a href="../classes/Contentful.Delivery.Synchronization.DeletedAsset.html">\Contentful\Delivery\Synchronization\DeletedAsset</a>|<a href="../classes/Contentful.Delivery.Synchronization.DeletedEntry.html">\Contentful\Delivery\Synchronization\DeletedEntry</a>|<a href="../classes/Contentful.ResourceArray.html">\Contentful\ResourceArray</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                        </div>
+            </div>
+            <a id="\Contentful\Delivery\Client"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Contentful.Delivery.html">Delivery</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Delivery.Client.html">Client</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+    </footer>
+    </body>
+</html>

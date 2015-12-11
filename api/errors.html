@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/template.js" type="text/javascript"></script>
+        <script src="js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="index.html">contentful.php - API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="namespaces/Contentful.html">Contentful</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+        <div class="row">
+        <div class="span4">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Filter type</li>
+                <li>
+                    <div class="btn-group type-filter" data-toggle="buttons-checkbox">
+                        <button class="btn critical">Critical</button>
+                        <button class="btn error">Error</button>
+                        <button class="btn notice">Notice</button>
+                    </div>
+                </li>
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#Delivery/Query.php"><i class="icon-file"></i> Delivery/Query.php</a></li>
+                                                                                                    <li><a href="#Delivery/ResourceBuilder.php"><i class="icon-file"></i> Delivery/ResourceBuilder.php</a></li>
+                                                                                                    <li><a href="#Delivery/ContentTypeField.php"><i class="icon-file"></i> Delivery/ContentTypeField.php</a></li>
+                                                                                                    <li><a href="#Delivery/SpaceMismatchException.php"><i class="icon-file"></i> Delivery/SpaceMismatchException.php</a></li>
+                                                                                                    <li><a href="#ResourceArray.php"><i class="icon-file"></i> ResourceArray.php</a></li>
+                                                                                                    <li><a href="#Delivery/EntryInterface.php"><i class="icon-file"></i> Delivery/EntryInterface.php</a></li>
+                                                                                                    <li><a href="#Delivery/LocalizedResource.php"><i class="icon-file"></i> Delivery/LocalizedResource.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/Query.php"><i class="icon-file"></i> Delivery/Synchronization/Query.php</a></li>
+                                                                                                    <li><a href="#Delivery/ContentType.php"><i class="icon-file"></i> Delivery/ContentType.php</a></li>
+                                                                                                    <li><a href="#Query.php"><i class="icon-file"></i> Query.php</a></li>
+                                                                                                    <li><a href="#Delivery/DynamicEntry.php"><i class="icon-file"></i> Delivery/DynamicEntry.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/Result.php"><i class="icon-file"></i> Delivery/Synchronization/Result.php</a></li>
+                                                                                                    <li><a href="#Delivery/Console/Application.php"><i class="icon-file"></i> Delivery/Console/Application.php</a></li>
+                                                                                                    <li><a href="#Delivery/InstanceCache.php"><i class="icon-file"></i> Delivery/InstanceCache.php</a></li>
+                                                                                                    <li><a href="#Delivery/File.php"><i class="icon-file"></i> Delivery/File.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/DeletedResource.php"><i class="icon-file"></i> Delivery/Synchronization/DeletedResource.php</a></li>
+                                                                                                    <li><a href="#Location.php"><i class="icon-file"></i> Location.php</a></li>
+                                                                                                    <li><a href="#Delivery/SystemProperties.php"><i class="icon-file"></i> Delivery/SystemProperties.php</a></li>
+                                                                                                    <li><a href="#Delivery/Tool/ClassGenerator.php"><i class="icon-file"></i> Delivery/Tool/ClassGenerator.php</a></li>
+                                                                                                    <li><a href="#Delivery/Client.php"><i class="icon-file"></i> Delivery/Client.php</a></li>
+                                                                                                    <li><a href="#Delivery/ImageOptions.php"><i class="icon-file"></i> Delivery/ImageOptions.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/Manager.php"><i class="icon-file"></i> Delivery/Synchronization/Manager.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/DeletedEntry.php"><i class="icon-file"></i> Delivery/Synchronization/DeletedEntry.php</a></li>
+                                                                                                    <li><a href="#Delivery/ImageFile.php"><i class="icon-file"></i> Delivery/ImageFile.php</a></li>
+                                                                                                    <li><a href="#Delivery/Link.php"><i class="icon-file"></i> Delivery/Link.php</a></li>
+                                                                                                    <li><a href="#Delivery/Console/Command/GenerateClassesCommand.php"><i class="icon-file"></i> Delivery/Console/Command/GenerateClassesCommand.php</a></li>
+                                                                                                    <li><a href="#BearerToken.php"><i class="icon-file"></i> BearerToken.php</a></li>
+                                                                                                    <li><a href="#Delivery/Locale.php"><i class="icon-file"></i> Delivery/Locale.php</a></li>
+                                                                                                    <li><a href="#Delivery/Space.php"><i class="icon-file"></i> Delivery/Space.php</a></li>
+                                                                                                    <li><a href="#ResourceNotFoundException.php"><i class="icon-file"></i> ResourceNotFoundException.php</a></li>
+                                                                                                    <li><a href="#Client.php"><i class="icon-file"></i> Client.php</a></li>
+                                                                                                    <li><a href="#Delivery/Asset.php"><i class="icon-file"></i> Delivery/Asset.php</a></li>
+                                                                                                    <li><a href="#Delivery/Synchronization/DeletedAsset.php"><i class="icon-file"></i> Delivery/Synchronization/DeletedAsset.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span8">
+            <ul class="breadcrumb">
+                <li><a href="?"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                            <a name="Delivery/Query.php" id="Delivery/Query.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Query.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/ResourceBuilder.php" id="Delivery/ResourceBuilder.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/ResourceBuilder.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/ContentTypeField.php" id="Delivery/ContentTypeField.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/ContentTypeField.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/SpaceMismatchException.php" id="Delivery/SpaceMismatchException.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/SpaceMismatchException.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="ResourceArray.php" id="ResourceArray.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            ResourceArray.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>146</td>
+                                        <td>No summary for method offsetExists()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>159</td>
+                                        <td>No summary for method offsetGet()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/EntryInterface.php" id="Delivery/EntryInterface.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/EntryInterface.php
+                            <span class="pull-right badge badge-info">2</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for interface &quot;&quot;</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/LocalizedResource.php" id="Delivery/LocalizedResource.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/LocalizedResource.php
+                            <span class="pull-right badge badge-info">2</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>90</td>
+                                        <td>No summary for method getLocaleFromInput()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/Query.php" id="Delivery/Synchronization/Query.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/Query.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/ContentType.php" id="Delivery/ContentType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/ContentType.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Query.php" id="Query.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Query.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>259</td>
+                                        <td>No summary for method setMimeTypeGroup()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>287</td>
+                                        <td>No summary for method getMimeTypeGroup()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/DynamicEntry.php" id="Delivery/DynamicEntry.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/DynamicEntry.php
+                            <span class="pull-right badge badge-info">14</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Contentful\Delivery\DynamicEntry</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for method getId()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for method getRevision()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>No summary for method getUpdatedAt()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>No summary for method getCreatedAt()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for method getSpace()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>No summary for method getContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $name is missing from the Docblock of __call</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $arguments is missing from the Docblock of __call</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>No summary for method __call()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>162</td>
+                                        <td>No summary for method jsonSerialize()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for property $sys</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for property $client</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/Result.php" id="Delivery/Synchronization/Result.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/Result.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Console/Application.php" id="Delivery/Console/Application.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Console/Application.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for method getDefaultCommands()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/InstanceCache.php" id="Delivery/InstanceCache.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/InstanceCache.php
+                            <span class="pull-right badge badge-info">10</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Contentful\Delivery\InstanceCache</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>91</td>
+                                        <td>No summary for method hasAsset()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>99</td>
+                                        <td>No summary for method addAsset()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>109</td>
+                                        <td>No summary for method getContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>123</td>
+                                        <td>No summary for method hasContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>131</td>
+                                        <td>No summary for method addContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>141</td>
+                                        <td>No summary for method getEntry()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>155</td>
+                                        <td>No summary for method hasEntry()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>163</td>
+                                        <td>No summary for method addEntry()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/File.php" id="Delivery/File.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/File.php
+                            <span class="pull-right badge badge-info">2</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Contentful\Delivery\File</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/DeletedResource.php" id="Delivery/Synchronization/DeletedResource.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/DeletedResource.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Location.php" id="Location.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Location.php
+                            <span class="pull-right badge badge-info">2</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/SystemProperties.php" id="Delivery/SystemProperties.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/SystemProperties.php
+                            <span class="pull-right badge badge-info">9</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>85</td>
+                                        <td>No summary for method getId()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>93</td>
+                                        <td>No summary for method getType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>101</td>
+                                        <td>No summary for method getSpace()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>109</td>
+                                        <td>No summary for method getContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>117</td>
+                                        <td>No summary for method getRevision()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>125</td>
+                                        <td>No summary for method getCreatedAt()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>133</td>
+                                        <td>No summary for method getUpdatedAt()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>141</td>
+                                        <td>No summary for method getDeletedAt()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Tool/ClassGenerator.php" id="Delivery/Tool/ClassGenerator.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Tool/ClassGenerator.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for property $spaces</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for property $classTemplate</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Client.php" id="Delivery/Client.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Client.php
+                            <span class="pull-right badge badge-info">8</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>68</td>
+                                        <td>No summary for method getAsset()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>86</td>
+                                        <td>No summary for method getAssets()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>104</td>
+                                        <td>No summary for method getContentType()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>120</td>
+                                        <td>No summary for method getContentTypes()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>135</td>
+                                        <td>No summary for method getEntry()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>153</td>
+                                        <td>No summary for method getEntries()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>169</td>
+                                        <td>No summary for method getSpace()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/ImageOptions.php" id="Delivery/ImageOptions.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/ImageOptions.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/Manager.php" id="Delivery/Synchronization/Manager.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/Manager.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/DeletedEntry.php" id="Delivery/Synchronization/DeletedEntry.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/DeletedEntry.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/ImageFile.php" id="Delivery/ImageFile.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/ImageFile.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Contentful\Delivery\ImageFile</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>70</td>
+                                        <td>No summary for method getUrl()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Link.php" id="Delivery/Link.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Link.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Console/Command/GenerateClassesCommand.php" id="Delivery/Console/Command/GenerateClassesCommand.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Console/Command/GenerateClassesCommand.php
+                            <span class="pull-right badge badge-info">5</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for method configure()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>Argument $input is missing from the Docblock of execute</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>Argument $output is missing from the Docblock of execute</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for method execute()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="BearerToken.php" id="BearerToken.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            BearerToken.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Locale.php" id="Delivery/Locale.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Locale.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Space.php" id="Delivery/Space.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Space.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="ResourceNotFoundException.php" id="ResourceNotFoundException.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            ResourceNotFoundException.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Client.php" id="Client.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Client.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>49</td>
+                                        <td>No summary for method request()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>71</td>
+                                        <td>No summary for method decodeJson()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Asset.php" id="Delivery/Asset.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Asset.php
+                            <span class="pull-right badge badge-info">4</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for class \Contentful\Delivery\Asset</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>70</td>
+                                        <td>No summary for method getDescription()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>82</td>
+                                        <td>No summary for method getFile()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Delivery/Synchronization/DeletedAsset.php" id="Delivery/Synchronization/DeletedAsset.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Delivery/Synchronization/DeletedAsset.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 11 Dec 2015 15:39:27 +0100.<br/>
+    </footer>
+    </body>
+</html>

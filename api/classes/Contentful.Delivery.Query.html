@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    contentful.php - API Documentation &raquo; \Contentful\Delivery\Query
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">contentful.php - API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Contentful.html">Contentful</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Query constructor.">
+            <span class="description">Query constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getContentType" title="getContentType :: Returns the name of the content type for which results will be retrieved. Can be NULL if no content type is set">
+            <span class="description">Returns the name of the content type for which results will be retrieved. Can be NULL if no content type is set</span><pre>getContentType</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getInclude" title="getInclude :: Get the amount of levels of links that should be resolved.">
+            <span class="description">Get the amount of levels of links that should be resolved.</span><pre>getInclude</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getLimit" title="getLimit :: Returns the maximum number of results to retrieve. Can return NULL if no maximum is defined.">
+            <span class="description">Returns the maximum number of results to retrieve. Can return NULL if no maximum is defined.</span><pre>getLimit</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getMimeTypeGroup" title="getMimeTypeGroup :: ">
+            <span class="description"></span><pre>getMimeTypeGroup</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getQueryData" title="getQueryData :: Returns the parameters to execute this query.">
+            <span class="description">Returns the parameters to execute this query.</span><pre>getQueryData</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSkip" title="getSkip :: Returns the index of the first result to retrieve. Can return NULL if no index is specified.">
+            <span class="description">Returns the index of the first result to retrieve. Can return NULL if no index is specified.</span><pre>getSkip</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_orderBy" title="orderBy :: Set the order of the items retrieved by this query.">
+            <span class="description">Set the order of the items retrieved by this query.</span><pre>orderBy</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setContentType" title="setContentType :: Set the content type to which results should be limited. Set to NULL to not filter for a content type.">
+            <span class="description">Set the content type to which results should be limited. Set to NULL to not filter for a content type.</span><pre>setContentType</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setInclude" title="setInclude :: Set the amount of levels of links that should be resolved.">
+            <span class="description">Set the amount of levels of links that should be resolved.</span><pre>setInclude</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setLimit" title="setLimit :: Set the maximum number of results to retrieve. To reset set to NULL;">
+            <span class="description">Set the maximum number of results to retrieve. To reset set to NULL;</span><pre>setLimit</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setMimeTypeGroup" title="setMimeTypeGroup :: ">
+            <span class="description"></span><pre>setMimeTypeGroup</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setSkip" title="setSkip :: Sets the index of the first result to retrieve. To reset set to NULL.">
+            <span class="description">Sets the index of the first result to retrieve. To reset set to NULL.</span><pre>setSkip</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_where" title="where :: Add a filter condition to this query.">
+            <span class="description">Add a filter condition to this query.</span><pre>where</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_DATE_FORMAT" title="DATE_FORMAT :: ISO8601 but with the seconds forced to 0.">
+                        <span class="description">ISO8601 but with the seconds forced to 0.</span><pre>DATE_FORMAT</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Query</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Contentful.Query.html">\Contentful\Query</a>
+                                                        </small>
+                <p class="short_description">A Query is used to filter and order collections when making API requests.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        api
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Query constructor.</h2>
+                            <pre>__construct() </pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Empty for now, included for forward compatibility.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getContentType"></a>
+                        <div class="element clickable method public  method_getContentType" data-toggle="collapse" data-target=".method_getContentType .collapse">
+                            <h2>Returns the name of the content type for which results will be retrieved. Can be NULL if no content type is set</h2>
+                            <pre>getContentType() : string|null</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string|null</code><p><p>The name of the content type results will be limited to</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getInclude"></a>
+                        <div class="element clickable method public  method_getInclude" data-toggle="collapse" data-target=".method_getInclude .collapse">
+                            <h2>Get the amount of levels of links that should be resolved.</h2>
+                            <pre>getInclude() : integer|null</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getLimit"></a>
+                        <div class="element clickable method public  method_getLimit" data-toggle="collapse" data-target=".method_getLimit .collapse">
+                            <h2>Returns the maximum number of results to retrieve. Can return NULL if no maximum is defined.</h2>
+                            <pre>getLimit() : integer|null</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMimeTypeGroup"></a>
+                        <div class="element clickable method public  method_getMimeTypeGroup" data-toggle="collapse" data-target=".method_getMimeTypeGroup .collapse">
+                            <h2>getMimeTypeGroup</h2>
+                            <pre>getMimeTypeGroup() : null|string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>null|string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getQueryData"></a>
+                        <div class="element clickable method public  method_getQueryData" data-toggle="collapse" data-target=".method_getQueryData .collapse">
+                            <h2>Returns the parameters to execute this query.</h2>
+                            <pre>getQueryData() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getSkip"></a>
+                        <div class="element clickable method public  method_getSkip" data-toggle="collapse" data-target=".method_getSkip .collapse">
+                            <h2>Returns the index of the first result to retrieve. Can return NULL if no index is specified.</h2>
+                            <pre>getSkip() : integer|null</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_orderBy"></a>
+                        <div class="element clickable method public  method_orderBy" data-toggle="collapse" data-target=".method_orderBy .collapse">
+                            <h2>Set the order of the items retrieved by this query.</h2>
+                            <pre>orderBy(string|null $field, boolean $reverse = false) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Note that when ordering Entries by fields you must set the content_type URI query parameter to the ID of
+the Content Type you want to filter by.</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$field</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$reverse</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setContentType"></a>
+                        <div class="element clickable method public  method_setContentType" data-toggle="collapse" data-target=".method_setContentType .collapse">
+                            <h2>Set the content type to which results should be limited. Set to NULL to not filter for a content type.</h2>
+                            <pre>setContentType(\Contentful\Delivery\ContentType|string|null $contentType) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Only works when querying entries.</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$contentType</h4>
+                                                <code><a href="../classes/Contentful.Delivery.ContentType.html">\Contentful\Delivery\ContentType</a>|string|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setInclude"></a>
+                        <div class="element clickable method public  method_setInclude" data-toggle="collapse" data-target=".method_setInclude .collapse">
+                            <h2>Set the amount of levels of links that should be resolved.</h2>
+                            <pre>setInclude(integer|null $include) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$include</h4>
+                                                <code>integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setLimit"></a>
+                        <div class="element clickable method public  method_setLimit" data-toggle="collapse" data-target=".method_setLimit .collapse">
+                            <h2>Set the maximum number of results to retrieve. To reset set to NULL;</h2>
+                            <pre>setLimit(integer|null $limit) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>If $maxArguments is not withing the specified range</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$limit</h4>
+                                                <code>integer|null</code><p><p>The maximum number of results to retrieve, must be between 1 and 1000 or null</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setMimeTypeGroup"></a>
+                        <div class="element clickable method public  method_setMimeTypeGroup" data-toggle="collapse" data-target=".method_setMimeTypeGroup .collapse">
+                            <h2>setMimeTypeGroup</h2>
+                            <pre>setMimeTypeGroup(string|null $group) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$group</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setSkip"></a>
+                        <div class="element clickable method public  method_setSkip" data-toggle="collapse" data-target=".method_setSkip .collapse">
+                            <h2>Sets the index of the first result to retrieve. To reset set to NULL.</h2>
+                            <pre>setSkip(integer|null $skip) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>If $skip is not within the specified range</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$skip</h4>
+                                                <code>integer|null</code><p><p>The index of the first result that will be retrieved. Must be &gt;= 0.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_where"></a>
+                        <div class="element clickable method public  method_where" data-toggle="collapse" data-target=".method_where .collapse">
+                            <h2>Add a filter condition to this query.</h2>
+                            <pre>where(string $field, string|\DateTimeInterface|\Contentful\Location $value, string|null $operator = null) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                <span class="label label-info">api</span>                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Valid operators are</p>
+<ul>
+<li>ne</li>
+<li>in</li>
+<li>nin</li>
+<li>exists</li>
+<li>lt</li>
+<li>lte</li>
+<li>gt</li>
+<li>gte</li>
+<li>match</li>
+<li>near</li>
+<li>within</li>
+</ul></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>If $operator is not one of the valid values</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$field</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>string|\DateTimeInterface|<a href="../classes/Contentful.Location.html">\Contentful\Location</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$operator</h4>
+                                                <code>string|null</code><p><p>The operator to use for this condition.
+Default is strict equality.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_DATE_FORMAT"> </a>
+                            <div class="element clickable constant  constant_DATE_FORMAT" data-toggle="collapse" data-target=".constant_DATE_FORMAT .collapse">
+                                <h2>ISO8601 but with the seconds forced to 0.</h2>
+                                <pre>DATE_FORMAT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                        </div>
+            </div>
+            <a id="\Contentful\Delivery\Query"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Contentful.Delivery.html">Delivery</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Delivery.Query.html">Query</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+    </footer>
+    </body>
+</html>

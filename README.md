@@ -2,6 +2,7 @@ contentful.php
 ===============
 
 [![Build Status](https://travis-ci.org/contentful/contentful.php.svg)](https://travis-ci.org/contentful/contentful.php)
+[![Coverage Status](https://coveralls.io/repos/contentful/contentful.php/badge.svg?branch=master&service=github)](https://coveralls.io/github/contentful/contentful.php?branch=master)
 
 PHP SDK for [Contentful's][1] Content Delivery API.
 

@@ -3,6 +3,7 @@ contentful.php
 
 [![Build Status](https://travis-ci.org/contentful/contentful.php.svg)](https://travis-ci.org/contentful/contentful.php)
 [![Coverage Status](https://coveralls.io/repos/contentful/contentful.php/badge.svg?branch=master&service=github)](https://coveralls.io/github/contentful/contentful.php?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/568a3a64eb4f47003c000ffc/badge.svg?style=flat)](https://www.versioneye.com/user/projects/568a3a64eb4f47003c000ffc)
 
 PHP SDK for [Contentful's][1] Content Delivery API.
 

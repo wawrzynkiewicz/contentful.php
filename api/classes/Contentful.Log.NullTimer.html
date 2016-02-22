@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    contentful.php - API Documentation &raquo; \Contentful\Delivery\Console\Command\GenerateClassesCommand
+    <title>    contentful.php - API Documentation &raquo; \Contentful\Log\NullTimer
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -119,30 +119,45 @@
         <li class="nav-header">
             <i class="icon-custom icon-method"></i> Methods
             <ul>
-                                                                                                                                                                                                                    </ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Empty constructor for forward compatibility.">
+            <span class="description">Empty constructor for forward compatibility.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDuration" title="getDuration :: Returns the time (in seconds) the timer ran.">
+            <span class="description">Returns the time (in seconds) the timer ran.</span><pre>getDuration</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isRunning" title="isRunning :: Returns true if the timer is currently running.">
+            <span class="description">Returns true if the timer is currently running.</span><pre>isRunning</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_start" title="start :: Starts the timer.">
+            <span class="description">Starts the timer.</span><pre>start</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_stop" title="stop :: Stops the timer.">
+            <span class="description">Stops the timer.</span><pre>stop</pre>
+        </a>
+    </li>
+
+                                                </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                            <li class="method protected">
-                            <a href="#method_configure" title="configure :: ">
-                                <span class="description"></span><pre>configure</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_execute" title="execute :: ">
-                                <span class="description"></span><pre>execute</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_getClassGenerator" title="getClassGenerator :: Returns the ClassGenerator used by this command. Override this method if you need to customize the generated classes.">
-                                <span class="description">Returns the ClassGenerator used by this command. Override this method if you need to customize the generated classes.</span><pre>getClassGenerator</pre>
-                            </a>
-                        </li>
-                                                </ul>
+                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -156,26 +171,17 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>GenerateClassesCommand</h1>
+                <h1>NullTimer</h1>
                 <small style="display: block; text-align: right">
-                                            Extends \Symfony\Component\Console\Command\Command
-                                                        </small>
-                <p class="short_description">The GenerateClassesCommand can be used to generate a set of classes for every content type. This yields improved performance.</p>
+                                                                Implements <a href="../classes/Contentful.Log.TimerInterface.html">\Contentful\Log\TimerInterface</a>
+                                    </small>
+                <p class="short_description">Implementation of TimerInterface that does not actually record any time.</p>
                 <div class="details">
                     <div class="long_description">
-                        
+                        <p>Used in production to reduce overhead.</p>
                     </div>
                     <table class="table table-bordered">
                                                                                     <tr>
-                                    <th>
-                                        api
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
                                     <th>
                                         package
                                                                             </th>
@@ -187,10 +193,10 @@
                                                                                                                                                                                 </table>
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_configure"></a>
-                        <div class="element clickable method protected  method_configure" data-toggle="collapse" data-target=".method_configure .collapse">
-                            <h2>configure</h2>
-                            <pre>configure() </pre>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Empty constructor for forward compatibility.</h2>
+                            <pre>__construct() </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -221,17 +227,17 @@
                             </div>
 
                         </div>
-                                            <a id="method_execute"></a>
-                        <div class="element clickable method protected  method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
-                            <h2>execute</h2>
-                            <pre>execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output) </pre>
+                                            <a id="method_getDuration"></a>
+                        <div class="element clickable method public  method_getDuration" data-toggle="collapse" data-target=".method_getDuration .collapse">
+                            <h2>Returns the time (in seconds) the timer ran.</h2>
+                            <pre>getDuration() : float|null</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
                             
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"></div>
+                                    <div class="long_description"><p>Returns null if no time has been recorded.</p></div>
 
                                     <table class="table">
                                                                                     <tr>
@@ -241,42 +247,6 @@
                                                 <td>
                                                                                                     </td>
                                             </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$input</h4>
-                                                <code>\Symfony\Component\Console\Input\InputInterface</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$output</h4>
-                                                <code>\Symfony\Component\Console\Output\OutputInterface</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getClassGenerator"></a>
-                        <div class="element clickable method protected  method_getClassGenerator" data-toggle="collapse" data-target=".method_getClassGenerator .collapse">
-                            <h2>Returns the ClassGenerator used by this command. Override this method if you need to customize the generated classes.</h2>
-                            <pre>getClassGenerator() : \Contentful\Delivery\Tool\ClassGenerator</pre>
-                            <div class="labels">
-                                                                                                                                                                <span class="label label-info">api</span>                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
                                                                                     <tr>
                                                 <th>
                                                     
@@ -288,7 +258,111 @@
 
                                     
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/Contentful.Delivery.Tool.ClassGenerator.html">\Contentful\Delivery\Tool\ClassGenerator</a></code><p></p>
+                                        <code>float|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isRunning"></a>
+                        <div class="element clickable method public  method_isRunning" data-toggle="collapse" data-target=".method_isRunning .collapse">
+                            <h2>Returns true if the timer is currently running.</h2>
+                            <pre>isRunning() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_start"></a>
+                        <div class="element clickable method public  method_start" data-toggle="collapse" data-target=".method_start .collapse">
+                            <h2>Starts the timer.</h2>
+                            <pre>start() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_stop"></a>
+                        <div class="element clickable method public  method_stop" data-toggle="collapse" data-target=".method_stop .collapse">
+                            <h2>Stops the timer.</h2>
+                            <pre>stop() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
                                                                     </div>
                             </div>
 
@@ -297,14 +371,14 @@
                     
                                                         </div>
             </div>
-            <a id="\Contentful\Delivery\Console\Command\GenerateClassesCommand"></a>
+            <a id="\Contentful\Log\NullTimer"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
-    <li><span class="divider">\</span><a href="../namespaces/Contentful.Delivery.Console.Command.html">Command</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/Contentful.Log.html">Log</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Delivery.Console.Command.GenerateClassesCommand.html">GenerateClassesCommand</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Log.NullTimer.html">NullTimer</a></li>
             </ul>
         </div>
     </div>

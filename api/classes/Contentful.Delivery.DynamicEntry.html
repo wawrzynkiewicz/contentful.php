@@ -131,7 +131,7 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                                                                                                                                <li class="method public">
         <a href="#method_getContentType" title="getContentType :: ">
             <span class="description"></span><pre>getContentType</pre>
         </a>
@@ -189,7 +189,7 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                    <li class="method protected inherited">
+                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected inherited">
                             <a href="#method_getLocaleFromInput" title="getLocaleFromInput :: ">
                                 <span class="description"></span><pre>getLocaleFromInput</pre>
                             </a>
@@ -198,7 +198,24 @@
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                    <li class="method private">
+                            <a href="#method_formatDateForJson" title="formatDateForJson :: Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.">
+                                <span class="description">Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.</span><pre>formatDateForJson</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_formatSimpleValueForJson" title="formatSimpleValueForJson :: ">
+                                <span class="description"></span><pre>formatSimpleValueForJson</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_formatValueForJson" title="formatValueForJson :: ">
+                                <span class="description"></span><pre>formatValueForJson</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -304,6 +321,124 @@
                                                                                     <div class="subelement argument">
                                                 <h4>$availableLocales</h4>
                                                 <code>array&lt;mixed,<a href="../classes/Contentful.Delivery.Locale.html">\Contentful\Delivery\Locale</a>&gt;</code><p><p>The locales available in the space this resource belongs to.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatDateForJson"></a>
+                        <div class="element clickable method private  method_formatDateForJson" data-toggle="collapse" data-target=".method_formatDateForJson .collapse">
+                            <h2>Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.</h2>
+                            <pre>formatDateForJson(\DateTimeImmutable $dt) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dt</h4>
+                                                <code>\DateTimeImmutable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>ISO 8601 formatted date</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatSimpleValueForJson"></a>
+                        <div class="element clickable method private  method_formatSimpleValueForJson" data-toggle="collapse" data-target=".method_formatSimpleValueForJson .collapse">
+                            <h2>formatSimpleValueForJson</h2>
+                            <pre>formatSimpleValueForJson( $value,  $type,  $linkType) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$linkType</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatValueForJson"></a>
+                        <div class="element clickable method private  method_formatValueForJson" data-toggle="collapse" data-target=".method_formatValueForJson .collapse">
+                            <h2>formatValueForJson</h2>
+                            <pre>formatValueForJson( $value, \Contentful\Delivery\ContentTypeField $fieldConfig) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$fieldConfig</h4>
+                                                <code><a href="../classes/Contentful.Delivery.ContentTypeField.html">\Contentful\Delivery\ContentTypeField</a></code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -652,6 +787,32 @@
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_fields"> </a>
+                            <div class="element clickable property  private property_fields" data-toggle="collapse" data-target=".property_fields .collapse">
+                                <h2>fields</h2>
+                                <pre>fields : object</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>object</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                     <a id="property_sys"> </a>
                             <div class="element clickable property  protected property_sys" data-toggle="collapse" data-target=".property_sys .collapse">
                                 <h2>sys</h2>
@@ -730,6 +891,32 @@
                                                                             </div>
                                 </div>
                             </div>
+                                                    <a id="property_availableLocales"> </a>
+                            <div class="element clickable property  private property_availableLocales inherited" data-toggle="collapse" data-target=".property_availableLocales .collapse">
+                                <h2>List of codes for all the locales available in the space this resource belongs to</h2>
+                                <pre>availableLocales : array&lt;mixed,string&gt;</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array&lt;mixed,string&gt;</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                             </div>
             </div>
             <a id="\Contentful\Delivery\DynamicEntry"></a>
@@ -750,7 +937,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+            generated on Mon, 22 Feb 2016 12:45:48 +0000.<br/>
     </footer>
     </body>
 </html>

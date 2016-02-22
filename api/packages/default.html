@@ -146,12 +146,33 @@
         <a href="../classes/Contentful.Delivery.EntryInterface.html" class="more">« More »</a>
     </div>
 
+                                        <div id="LoggerInterface" class="element ajax clickable interface">
+        <h1>LoggerInterface<a href="../classes/Contentful.Log.LoggerInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Log.LoggerInterface.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="TimerInterface" class="element ajax clickable interface">
+        <h1>TimerInterface<a href="../classes/Contentful.Log.TimerInterface.html">¶</a></h1>
+        <p class="short_description">The TimerInterface is used to record the duration of requests against Contentful&#039;s API.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Log.TimerInterface.html" class="more">« More »</a>
+    </div>
+
                 
                                         <div id="Application" class="element ajax clickable class">
         <h1>Application<a href="../classes/Contentful.Delivery.Console.Application.html">¶</a></h1>
         <p class="short_description">CLI Application with Helpers for the Contentful SDK.</p>
         <div class="details collapse"></div>
         <a href="../classes/Contentful.Delivery.Console.Application.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="ArrayLogger" class="element ajax clickable class">
+        <h1>ArrayLogger<a href="../classes/Contentful.Log.ArrayLogger.html">¶</a></h1>
+        <p class="short_description">Saves requests information in array so they can be retrieved later.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Log.ArrayLogger.html" class="more">« More »</a>
     </div>
 
                                         <div id="Asset" class="element ajax clickable class">
@@ -177,19 +198,19 @@ compatibility promise for override any method but `getClassName`.</div>
     </div>
 
                                         <div id="Client" class="element ajax clickable class">
+        <h1>Client<a href="../classes/Contentful.Client.html">¶</a></h1>
+        <p class="short_description">Abstract client for common code for the different clients.</p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Client.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="Client" class="element ajax clickable class">
         <h1>Client<a href="../classes/Contentful.Delivery.Client.html">¶</a></h1>
         <p class="short_description">A Client is used to communicate the Contentful Delivery API.</p>
         <div class="details collapse">A Client is only responsible for one Space. When access to multiple spaces is required, create multiple Clients.
 
 This class can be configured to use the Preview API instead of the Delivery API. This grants access to not yet published content.</div>
         <a href="../classes/Contentful.Delivery.Client.html" class="more">« More »</a>
-    </div>
-
-                                        <div id="Client" class="element ajax clickable class">
-        <h1>Client<a href="../classes/Contentful.Client.html">¶</a></h1>
-        <p class="short_description">Abstract client for common code for the different clients.</p>
-        <div class="details collapse"></div>
-        <a href="../classes/Contentful.Client.html" class="more">« More »</a>
     </div>
 
                                         <div id="ContentType" class="element ajax clickable class">
@@ -291,6 +312,13 @@ defined by it&#039;s Content Type, and the values of those fields must match the
         <a href="../classes/Contentful.Location.html" class="more">« More »</a>
     </div>
 
+                                        <div id="LogEntry" class="element ajax clickable class">
+        <h1>LogEntry<a href="../classes/Contentful.Log.LogEntry.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Log.LogEntry.html" class="more">« More »</a>
+    </div>
+
                                         <div id="Manager" class="element ajax clickable class">
         <h1>Manager<a href="../classes/Contentful.Delivery.Synchronization.Manager.html">¶</a></h1>
         <p class="short_description">The synchronization Manager can be used to sync a Space to this server.</p>
@@ -298,11 +326,25 @@ defined by it&#039;s Content Type, and the values of those fields must match the
         <a href="../classes/Contentful.Delivery.Synchronization.Manager.html" class="more">« More »</a>
     </div>
 
+                                        <div id="NullLogger" class="element ajax clickable class">
+        <h1>NullLogger<a href="../classes/Contentful.Log.NullLogger.html">¶</a></h1>
+        <p class="short_description">Implementation of LoggerInterface that logs nothing.</p>
+        <div class="details collapse">Used in production to reduce overhead.</div>
+        <a href="../classes/Contentful.Log.NullLogger.html" class="more">« More »</a>
+    </div>
+
+                                        <div id="NullTimer" class="element ajax clickable class">
+        <h1>NullTimer<a href="../classes/Contentful.Log.NullTimer.html">¶</a></h1>
+        <p class="short_description">Implementation of TimerInterface that does not actually record any time.</p>
+        <div class="details collapse">Used in production to reduce overhead.</div>
+        <a href="../classes/Contentful.Log.NullTimer.html" class="more">« More »</a>
+    </div>
+
                                         <div id="Query" class="element ajax clickable class">
-        <h1>Query<a href="../classes/Contentful.Delivery.Synchronization.Query.html">¶</a></h1>
-        <p class="short_description">A sync Query can be used to limit what type of resources and events should be synced</p>
+        <h1>Query<a href="../classes/Contentful.Delivery.Query.html">¶</a></h1>
+        <p class="short_description">A Query is used to filter and order collections when making API requests.</p>
         <div class="details collapse"></div>
-        <a href="../classes/Contentful.Delivery.Synchronization.Query.html" class="more">« More »</a>
+        <a href="../classes/Contentful.Delivery.Query.html" class="more">« More »</a>
     </div>
 
                                         <div id="Query" class="element ajax clickable class">
@@ -313,10 +355,10 @@ defined by it&#039;s Content Type, and the values of those fields must match the
     </div>
 
                                         <div id="Query" class="element ajax clickable class">
-        <h1>Query<a href="../classes/Contentful.Delivery.Query.html">¶</a></h1>
-        <p class="short_description">A Query is used to filter and order collections when making API requests.</p>
+        <h1>Query<a href="../classes/Contentful.Delivery.Synchronization.Query.html">¶</a></h1>
+        <p class="short_description">A sync Query can be used to limit what type of resources and events should be synced</p>
         <div class="details collapse"></div>
-        <a href="../classes/Contentful.Delivery.Query.html" class="more">« More »</a>
+        <a href="../classes/Contentful.Delivery.Synchronization.Query.html" class="more">« More »</a>
     </div>
 
                                         <div id="ResourceArray" class="element ajax clickable class">
@@ -361,6 +403,13 @@ defined by it&#039;s Content Type, and the values of those fields must match the
         <a href="../classes/Contentful.Delivery.SpaceMismatchException.html" class="more">« More »</a>
     </div>
 
+                                        <div id="StandardTimer" class="element ajax clickable class">
+        <h1>StandardTimer<a href="../classes/Contentful.Log.StandardTimer.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse"></div>
+        <a href="../classes/Contentful.Log.StandardTimer.html" class="more">« More »</a>
+    </div>
+
                             </div>
             
     
@@ -372,7 +421,7 @@ defined by it&#039;s Content Type, and the values of those fields must match the
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 15:39:25 +0100.<br/>
+            generated on Mon, 22 Feb 2016 12:45:48 +0000.<br/>
     </footer>
     </body>
 </html>

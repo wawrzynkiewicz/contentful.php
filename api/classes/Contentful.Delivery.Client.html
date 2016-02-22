@@ -125,7 +125,7 @@
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public">
+                                                                                                                                                                                                                                                                                <li class="method public">
         <a href="#method_getAsset" title="getAsset :: ">
             <span class="description"></span><pre>getAsset</pre>
         </a>
@@ -173,13 +173,13 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                                                                        <li class="method public">
         <a href="#method_isPreview" title="isPreview :: Returns true when using the Preview API">
             <span class="description">Returns true when using the Preview API</span><pre>isPreview</pre>
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public">
+                                                                                                                                                                                                                        <li class="method public">
         <a href="#method_reviveJson" title="reviveJson :: Revive JSON previously cached.">
             <span class="description">Revive JSON previously cached.</span><pre>reviveJson</pre>
         </a>
@@ -189,25 +189,55 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                <li class="method protected">
+                                                                                                                                                    <li class="method protected">
                             <a href="#method_decodeJson" title="decodeJson :: ">
                                 <span class="description"></span><pre>decodeJson</pre>
                             </a>
                         </li>
                                                                                                                                                                                                                                                                                                                                                                                                                     <li class="method protected">
+                            <a href="#method_getUserAgent" title="getUserAgent :: ">
+                                <span class="description"></span><pre>getUserAgent</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_getUserAgentAppName" title="getUserAgentAppName :: ">
+                                <span class="description"></span><pre>getUserAgentAppName</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
                             <a href="#method_request" title="request :: ">
                                 <span class="description"></span><pre>request</pre>
                             </a>
                         </li>
-                                                                                    </ul>
+                                                                                                                        </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                <li class="method private">
+                            <a href="#method_buildRequest" title="buildRequest :: ">
+                                <span class="description"></span><pre>buildRequest</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method private">
+                            <a href="#method_doRequest" title="doRequest :: ">
+                                <span class="description"></span><pre>doRequest</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method private">
+                            <a href="#method_requestAndBuild" title="requestAndBuild :: ">
+                                <span class="description"></span><pre>requestAndBuild</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
             <ul>
+                                <li class="constant ">
+                    <a href="#constant_VERSION" title="VERSION :: ">
+                        <span class="description"></span><pre>VERSION</pre>
+                    </a>
+                </li>
                             </ul>
         </li>
     </ul>
@@ -252,7 +282,7 @@
                                                                 <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
                             <h2>Client constructor.</h2>
-                            <pre>__construct(string $token, string $baseUri, array $headers = array()) </pre>
+                            <pre>__construct(string $token, string $baseUri,  $api, \Contentful\Log\LoggerInterface $logger = null) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -281,8 +311,59 @@
                                                 <code>string</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
-                                                <h4>$headers</h4>
-                                                <code>array</code><p></p>
+                                                <h4>$api</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$logger</h4>
+                                                <code><a href="../classes/Contentful.Log.LoggerInterface.html">\Contentful\Log\LoggerInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_buildRequest"></a>
+                        <div class="element clickable method private  method_buildRequest" data-toggle="collapse" data-target=".method_buildRequest .collapse">
+                            <h2>buildRequest</h2>
+                            <pre>buildRequest( $method,  $path,  $query = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$query</h4>
+                                                <code></code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -321,6 +402,49 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code>object|array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_doRequest"></a>
+                        <div class="element clickable method private  method_doRequest" data-toggle="collapse" data-target=".method_doRequest .collapse">
+                            <h2>doRequest</h2>
+                            <pre>doRequest( $request,  $options) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
                                                                     </div>
                             </div>
 
@@ -564,6 +688,74 @@
                             </div>
 
                         </div>
+                                            <a id="method_getUserAgent"></a>
+                        <div class="element clickable method protected  method_getUserAgent" data-toggle="collapse" data-target=".method_getUserAgent .collapse">
+                            <h2>getUserAgent</h2>
+                            <pre>getUserAgent() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getUserAgentAppName"></a>
+                        <div class="element clickable method protected  method_getUserAgentAppName" data-toggle="collapse" data-target=".method_getUserAgentAppName .collapse">
+                            <h2>getUserAgentAppName</h2>
+                            <pre>getUserAgentAppName() </pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_isPreview"></a>
                         <div class="element clickable method public  method_isPreview" data-toggle="collapse" data-target=".method_isPreview .collapse">
                             <h2>Returns true when using the Preview API</h2>
@@ -638,6 +830,53 @@
                             </div>
 
                         </div>
+                                            <a id="method_requestAndBuild"></a>
+                        <div class="element clickable method private  method_requestAndBuild" data-toggle="collapse" data-target=".method_requestAndBuild .collapse">
+                            <h2>requestAndBuild</h2>
+                            <pre>requestAndBuild( $method,  $path, array $options = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_reviveJson"></a>
                         <div class="element clickable method public  method_reviveJson" data-toggle="collapse" data-target=".method_reviveJson .collapse">
                             <h2>Revive JSON previously cached.</h2>
@@ -675,8 +914,213 @@
 
                         </div>
                     
-                    
-                                                        </div>
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_VERSION"> </a>
+                            <div class="element clickable constant  constant_VERSION" data-toggle="collapse" data-target=".constant_VERSION .collapse">
+                                <h2>VERSION</h2>
+                                <pre>VERSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_builder"> </a>
+                            <div class="element clickable property  private property_builder" data-toggle="collapse" data-target=".property_builder .collapse">
+                                <h2>builder</h2>
+                                <pre>builder : \Contentful\Delivery\ResourceBuilder</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.ResourceBuilder.html">\Contentful\Delivery\ResourceBuilder</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_instanceCache"> </a>
+                            <div class="element clickable property  private property_instanceCache" data-toggle="collapse" data-target=".property_instanceCache .collapse">
+                                <h2>instanceCache</h2>
+                                <pre>instanceCache : \Contentful\Delivery\InstanceCache</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.InstanceCache.html">\Contentful\Delivery\InstanceCache</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_preview"> </a>
+                            <div class="element clickable property  private property_preview" data-toggle="collapse" data-target=".property_preview .collapse">
+                                <h2>preview</h2>
+                                <pre>preview : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_httpClient"> </a>
+                            <div class="element clickable property  private property_httpClient" data-toggle="collapse" data-target=".property_httpClient .collapse">
+                                <h2>httpClient</h2>
+                                <pre>httpClient : \GuzzleHttp\Client</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\GuzzleHttp\Client</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_baseUri"> </a>
+                            <div class="element clickable property  private property_baseUri" data-toggle="collapse" data-target=".property_baseUri .collapse">
+                                <h2>baseUri</h2>
+                                <pre>baseUri : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_logger"> </a>
+                            <div class="element clickable property  private property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
+                                <h2>logger</h2>
+                                <pre>logger : \Contentful\Log\LoggerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Log.LoggerInterface.html">\Contentful\Log\LoggerInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_api"> </a>
+                            <div class="element clickable property  private property_api" data-toggle="collapse" data-target=".property_api .collapse">
+                                <h2>api</h2>
+                                <pre>api : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
             </div>
             <a id="\Contentful\Delivery\Client"></a>
             <ul class="breadcrumb">
@@ -696,7 +1140,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+            generated on Mon, 22 Feb 2016 12:45:48 +0000.<br/>
     </footer>
     </body>
 </html>

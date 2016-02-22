@@ -119,13 +119,13 @@
         <li class="nav-header">
             <i class="icon-custom icon-method"></i> Methods
             <ul>
-                                                                                                    <li class="method public">
+                                                                                                                                                            <li class="method public">
         <a href="#method_continueSync" title="continueSync :: Continues the synchronization either at the next page or with the results since the initial synchronization.">
             <span class="description">Continues the synchronization either at the next page or with the results since the initial synchronization.</span><pre>continueSync</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_startSync" title="startSync :: Starts a new Synchronization. Will contain all the Resources currently present in the space.">
             <span class="description">Starts a new Synchronization. Will contain all the Resources currently present in the space.</span><pre>startSync</pre>
         </a>
@@ -135,11 +135,21 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                    </ul>
+                                                                                                                                                                                            </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                    </ul>
+                                                                            <li class="method private">
+                            <a href="#method_buildResult" title="buildResult :: Build a Result from the API response.">
+                                <span class="description">Build a Result from the API response.</span><pre>buildResult</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method private">
+                            <a href="#method_getTokenFromUrl" title="getTokenFromUrl :: Parses the sync_token out of an URL supplied by the API.">
+                                <span class="description">Parses the sync_token out of an URL supplied by the API.</span><pre>getTokenFromUrl</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -192,7 +202,34 @@
                                                                                                                                                                                 </table>
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_continueSync"></a>
+                                                                <a id="method_buildResult"></a>
+                        <div class="element clickable method private  method_buildResult" data-toggle="collapse" data-target=".method_buildResult .collapse">
+                            <h2>Build a Result from the API response.</h2>
+                            <pre>buildResult(object $data) : \Contentful\Delivery\Synchronization\Result</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Contentful.Delivery.Synchronization.Result.html">\Contentful\Delivery\Synchronization\Result</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_continueSync"></a>
                         <div class="element clickable method public  method_continueSync" data-toggle="collapse" data-target=".method_continueSync .collapse">
                             <h2>Continues the synchronization either at the next page or with the results since the initial synchronization.</h2>
                             <pre>continueSync(string $token) : \Contentful\Delivery\Synchronization\Result</pre>
@@ -215,6 +252,33 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code><a href="../classes/Contentful.Delivery.Synchronization.Result.html">\Contentful\Delivery\Synchronization\Result</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getTokenFromUrl"></a>
+                        <div class="element clickable method private  method_getTokenFromUrl" data-toggle="collapse" data-target=".method_getTokenFromUrl .collapse">
+                            <h2>Parses the sync_token out of an URL supplied by the API.</h2>
+                            <pre>getTokenFromUrl(string $url) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p><p>The nextSyncUrl or nextPageUrl from an API response.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
                                                                     </div>
                             </div>
 
@@ -249,7 +313,60 @@
                         </div>
                     
                     
-                                                        </div>
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_client"> </a>
+                            <div class="element clickable property  private property_client" data-toggle="collapse" data-target=".property_client .collapse">
+                                <h2>client</h2>
+                                <pre>client : \Contentful\Delivery\Client</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.Client.html">\Contentful\Delivery\Client</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_builder"> </a>
+                            <div class="element clickable property  private property_builder" data-toggle="collapse" data-target=".property_builder .collapse">
+                                <h2>builder</h2>
+                                <pre>builder : \Contentful\Delivery\ResourceBuilder</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.ResourceBuilder.html">\Contentful\Delivery\ResourceBuilder</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
             </div>
             <a id="\Contentful\Delivery\Synchronization\Manager"></a>
             <ul class="breadcrumb">
@@ -269,7 +386,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+            generated on Mon, 22 Feb 2016 12:45:48 +0000.<br/>
     </footer>
     </body>
 </html>

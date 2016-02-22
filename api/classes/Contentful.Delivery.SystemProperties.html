@@ -125,7 +125,7 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_getContentType" title="getContentType :: ">
             <span class="description"></span><pre>getContentType</pre>
         </a>
@@ -183,11 +183,18 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                <li class="method private">
+                            <a href="#method_formatDateForJson" title="formatDateForJson :: Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.">
+                                <span class="description">Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.</span><pre>formatDateForJson</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -279,6 +286,34 @@
                                                 <code>\DateTimeImmutable|null</code><p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatDateForJson"></a>
+                        <div class="element clickable method private  method_formatDateForJson" data-toggle="collapse" data-target=".method_formatDateForJson .collapse">
+                            <h2>Unfortunately PHP has no eeasy way to create a nice, ISO 8601 formatted date string with miliseconds and Z
+as the time zone specifier. Thus this hack.</h2>
+                            <pre>formatDateForJson(\DateTimeImmutable $dt) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dt</h4>
+                                                <code>\DateTimeImmutable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>ISO 8601 formatted date</p></p>
                                                                     </div>
                             </div>
 
@@ -556,7 +591,216 @@
                         </div>
                     
                     
-                                                        </div>
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_id"> </a>
+                            <div class="element clickable property  private property_id" data-toggle="collapse" data-target=".property_id .collapse">
+                                <h2>id</h2>
+                                <pre>id : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_type"> </a>
+                            <div class="element clickable property  private property_type" data-toggle="collapse" data-target=".property_type .collapse">
+                                <h2>type</h2>
+                                <pre>type : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_space"> </a>
+                            <div class="element clickable property  private property_space" data-toggle="collapse" data-target=".property_space .collapse">
+                                <h2>space</h2>
+                                <pre>space : \Contentful\Delivery\Space|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.Space.html">\Contentful\Delivery\Space</a>|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_contentType"> </a>
+                            <div class="element clickable property  private property_contentType" data-toggle="collapse" data-target=".property_contentType .collapse">
+                                <h2>contentType</h2>
+                                <pre>contentType : \Contentful\Delivery\ContentType|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Contentful.Delivery.ContentType.html">\Contentful\Delivery\ContentType</a>|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_revision"> </a>
+                            <div class="element clickable property  private property_revision" data-toggle="collapse" data-target=".property_revision .collapse">
+                                <h2>revision</h2>
+                                <pre>revision : integer|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_createdAt"> </a>
+                            <div class="element clickable property  private property_createdAt" data-toggle="collapse" data-target=".property_createdAt .collapse">
+                                <h2>createdAt</h2>
+                                <pre>createdAt : \DateTimeImmutable|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\DateTimeImmutable|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_updatedAt"> </a>
+                            <div class="element clickable property  private property_updatedAt" data-toggle="collapse" data-target=".property_updatedAt .collapse">
+                                <h2>updatedAt</h2>
+                                <pre>updatedAt : \DateTimeImmutable|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\DateTimeImmutable|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_deletedAt"> </a>
+                            <div class="element clickable property  private property_deletedAt" data-toggle="collapse" data-target=".property_deletedAt .collapse">
+                                <h2>deletedAt</h2>
+                                <pre>deletedAt : \DateTimeImmutable|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\DateTimeImmutable|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
             </div>
             <a id="\Contentful\Delivery\SystemProperties"></a>
             <ul class="breadcrumb">
@@ -576,7 +820,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 15:39:26 +0100.<br/>
+            generated on Mon, 22 Feb 2016 12:45:48 +0000.<br/>
     </footer>
     </body>
 </html>

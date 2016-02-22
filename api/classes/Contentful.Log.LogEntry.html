@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    contentful.php - API Documentation &raquo; \Contentful\Delivery\Link
+    <title>    contentful.php - API Documentation &raquo; \Contentful\Log\LogEntry
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -120,20 +120,32 @@
             <i class="icon-custom icon-method"></i> Methods
             <ul>
                                                                                                     <li class="method public">
-        <a href="#method___construct" title="__construct :: Link constructor.">
-            <span class="description">Link constructor.</span><pre>__construct</pre>
+        <a href="#method___construct" title="__construct :: LogEntry constructor.">
+            <span class="description">LogEntry constructor.</span><pre>__construct</pre>
         </a>
     </li>
 
                                                                                                         <li class="method public">
-        <a href="#method_getId" title="getId :: Get the ID of the referenced resource">
-            <span class="description">Get the ID of the referenced resource</span><pre>getId</pre>
+        <a href="#method_getApi" title="getApi :: ">
+            <span class="description"></span><pre>getApi</pre>
         </a>
     </li>
 
                                                                                                         <li class="method public">
-        <a href="#method_getLinkType" title="getLinkType :: Get the type of the Link.">
-            <span class="description">Get the type of the Link.</span><pre>getLinkType</pre>
+        <a href="#method_getDuration" title="getDuration :: ">
+            <span class="description"></span><pre>getDuration</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getException" title="getException :: ">
+            <span class="description"></span><pre>getException</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRequest" title="getRequest :: ">
+            <span class="description"></span><pre>getRequest</pre>
         </a>
     </li>
 
@@ -141,11 +153,11 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -159,10 +171,10 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>Link</h1>
+                <h1>LogEntry</h1>
                 <small style="display: block; text-align: right">
                                                         </small>
-                <p class="short_description">A link encodes a reference to a resource.</p>
+                <p class="short_description"></p>
                 <div class="details">
                     <div class="long_description">
                         
@@ -174,7 +186,7 @@
                                                                             </th>
                                     <td>
                                                                                     
-                                                                                <p>Contentful\Delivery</p>
+                                                                                <p>Default</p>
                                     </td>
                                 </tr>
                                                                                                                                                                                 </table>
@@ -182,8 +194,8 @@
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
                                                                 <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Link constructor.</h2>
-                            <pre>__construct(string $id, string $linkType) </pre>
+                            <h2>LogEntry constructor.</h2>
+                            <pre>__construct(string $api, \Psr\Http\Message\RequestInterface $request, float|null $duration, \Psr\Http\Message\ResponseInterface|null $response = null, \Exception|null $exception = null) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -193,6 +205,15 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>When $api is an unrecognized value</p>
+                                                                                                    </td>
+                                            </tr>
                                                                                     <tr>
                                                 <th>
                                                     
@@ -204,22 +225,34 @@
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$id</h4>
+                                                <h4>$api</h4>
                                                 <code>string</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
-                                                <h4>$linkType</h4>
-                                                <code>string</code><p></p>
+                                                <h4>$request</h4>
+                                                <code>\Psr\Http\Message\RequestInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$duration</h4>
+                                                <code>float|null</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$response</h4>
+                                                <code>\Psr\Http\Message\ResponseInterface|null</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$exception</h4>
+                                                <code>\Exception|null</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_getId"></a>
-                        <div class="element clickable method public  method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-                            <h2>Get the ID of the referenced resource</h2>
-                            <pre>getId() : string</pre>
+                                            <a id="method_getApi"></a>
+                        <div class="element clickable method public  method_getApi" data-toggle="collapse" data-target=".method_getApi .collapse">
+                            <h2>getApi</h2>
+                            <pre>getApi() : string</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -245,21 +278,17 @@
                             </div>
 
                         </div>
-                                            <a id="method_getLinkType"></a>
-                        <div class="element clickable method public  method_getLinkType" data-toggle="collapse" data-target=".method_getLinkType .collapse">
-                            <h2>Get the type of the Link.</h2>
-                            <pre>getLinkType() : string</pre>
+                                            <a id="method_getDuration"></a>
+                        <div class="element clickable method public  method_getDuration" data-toggle="collapse" data-target=".method_getDuration .collapse">
+                            <h2>getDuration</h2>
+                            <pre>getDuration() : float</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
                             
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"><p>Possible values are:</p>
-<ul>
-<li>Asset</li>
-<li>Entry</li>
-</ul></div>
+                                    <div class="long_description"></div>
 
                                     <table class="table">
                                                                                     <tr>
@@ -273,7 +302,65 @@
 
                                     
                                                                             <h3>Response</h3>
-                                        <code>string</code><p></p>
+                                        <code>float</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getException"></a>
+                        <div class="element clickable method public  method_getException" data-toggle="collapse" data-target=".method_getException .collapse">
+                            <h2>getException</h2>
+                            <pre>getException() : \Exception|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Exception|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRequest"></a>
+                        <div class="element clickable method public  method_getRequest" data-toggle="collapse" data-target=".method_getRequest .collapse">
+                            <h2>getRequest</h2>
+                            <pre>getRequest() : \Psr\Http\Message\RequestInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\RequestInterface</code><p></p>
                                                                     </div>
                             </div>
 
@@ -281,10 +368,10 @@
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_id"> </a>
-                            <div class="element clickable property  private property_id" data-toggle="collapse" data-target=".property_id .collapse">
-                                <h2>id</h2>
-                                <pre>id : string</pre>
+                                                    <a id="property_api"> </a>
+                            <div class="element clickable property  private property_api" data-toggle="collapse" data-target=".property_api .collapse">
+                                <h2>api</h2>
+                                <pre>api : string</pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -307,10 +394,10 @@
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_linkType"> </a>
-                            <div class="element clickable property  private property_linkType" data-toggle="collapse" data-target=".property_linkType .collapse">
-                                <h2>linkType</h2>
-                                <pre>linkType : string</pre>
+                                                    <a id="property_request"> </a>
+                            <div class="element clickable property  private property_request" data-toggle="collapse" data-target=".property_request .collapse">
+                                <h2>request</h2>
+                                <pre>request : \Psr\Http\Message\RequestInterface</pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -329,20 +416,98 @@
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code>string</code>
+                                            <code>\Psr\Http\Message\RequestInterface</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_duration"> </a>
+                            <div class="element clickable property  private property_duration" data-toggle="collapse" data-target=".property_duration .collapse">
+                                <h2>duration</h2>
+                                <pre>duration : float</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>float</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_response"> </a>
+                            <div class="element clickable property  private property_response" data-toggle="collapse" data-target=".property_response .collapse">
+                                <h2>response</h2>
+                                <pre>response : \Psr\Http\Message\ResponseInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Psr\Http\Message\ResponseInterface</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_exception"> </a>
+                            <div class="element clickable property  private property_exception" data-toggle="collapse" data-target=".property_exception .collapse">
+                                <h2>exception</h2>
+                                <pre>exception : \Exception</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Exception</code>
                                                                             </div>
                                 </div>
                             </div>
                                                             </div>
             </div>
-            <a id="\Contentful\Delivery\Link"></a>
+            <a id="\Contentful\Log\LogEntry"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
-    <li><span class="divider">\</span><a href="../namespaces/Contentful.Delivery.html">Delivery</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/Contentful.Log.html">Log</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Delivery.Link.html">Link</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/Contentful.Log.LogEntry.html">LogEntry</a></li>
             </ul>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2015-2017 Contentful GmbH
+ * @copyright 2015 Contentful GmbH
  * @license   MIT
  */
 
@@ -9,17 +9,17 @@ namespace Contentful\Delivery;
 class Asset extends LocalizedResource implements \JsonSerializable
 {
     /**
-     * @var array
+     * @var object
      */
     private $title;
 
     /**
-     * @var array
+     * @var object
      */
     private $description;
 
     /**
-     * @var array
+     * @var object
      */
     private $file;
 
@@ -31,9 +31,9 @@ class Asset extends LocalizedResource implements \JsonSerializable
     /**
      * Asset constructor.
      *
-     * @param array            $title
-     * @param array            $description
-     * @param array            $file
+     * @param object           $title
+     * @param object           $description
+     * @param object           $file
      * @param SystemProperties $sys
      */
     public function __construct($title, $description, $file, SystemProperties $sys)
@@ -51,30 +51,19 @@ class Asset extends LocalizedResource implements \JsonSerializable
      *
      * @param  Locale|string|null $locale
      *
-     * @return string|null
-     *
-     * @throws \InvalidArgumentException When $locale is not one of the locales supported by the space.
+     * @return string
      */
     public function getTitle($locale = null)
     {
         $localeCode = $this->getLocaleFromInput($locale);
 
-        // This checks happens after the call to getLocaleFromInput to make sure the Exception for invalid locales is still thrown.
-        if ($this->title === null) {
-            return null;
-        }
-
-        $localeCode = $this->loopThroughFallbackChain($this->title, $localeCode, $this->getSpace());
-
-        return $localeCode === null ? null : $this->title[$localeCode];
+        return $this->title->$localeCode;
     }
 
     /**
      * @param  Locale|string|null $locale
      *
-     * @return string|null
-     *
-     * @throws \InvalidArgumentException When $locale is not one of the locales supported by the space.
+     * @return string
      */
     public function getDescription($locale = null)
     {
@@ -85,23 +74,19 @@ class Asset extends LocalizedResource implements \JsonSerializable
             return null;
         }
 
-        $localeCode = $this->loopThroughFallbackChain($this->description, $localeCode, $this->getSpace());
-
-        return $localeCode === null ? null : $this->description[$localeCode];
+        return $this->description->$localeCode;
     }
 
     /**
      * @param  Locale|string|null $locale
      *
      * @return File
-     *
-     * @throws \InvalidArgumentException When $locale is not one of the locales supported by the space.
      */
     public function getFile($locale = null)
     {
         $localeCode = $this->getLocaleFromInput($locale);
 
-        return $this->file[$localeCode];
+        return $this->file->$localeCode;
     }
 
     /**
@@ -175,32 +160,16 @@ class Asset extends LocalizedResource implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        $entryLocale = $this->sys->getLocale();
-
         $obj = (object) [
-            'fields' => (object) [],
+            'fields' => (object) [
+                'title' => $this->title,
+                'file' => $this->file
+            ],
             'sys' => $this->sys
         ];
-        if ($entryLocale) {
-            $obj->fields->file = $this->file[$entryLocale];
-        } else {
-            $obj->fields->file = $this->file;
-        }
-
-        if ($this->title !== null) {
-            if ($entryLocale) {
-                $obj->fields->title = $this->title[$entryLocale];
-            } else {
-                $obj->fields->title = $this->title;
-            }
-        }
 
         if ($this->description !== null) {
-            if ($entryLocale) {
-                $obj->fields->description = $this->description[$entryLocale];
-            } else {
-                $obj->fields->description = $this->description;
-            }
+            $obj->fields->description = $this->description;
         }
 
         return $obj;

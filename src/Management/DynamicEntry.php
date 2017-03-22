@@ -4,33 +4,36 @@
  * @license   MIT
  */
 
-namespace Contentful\Delivery;
+namespace Contentful\Management;
+
+use Contentful\Delivery\EntryInterface;
+use Contentful\Delivery\Link;
+use Contentful\Delivery\LocalizedResource;
+use Contentful\Delivery\Client as DeliveryClient;
 
 class DynamicEntry extends LocalizedResource implements EntryInterface
 {
+    /**
+     * @var SystemProperties
+     */
+    protected $sys;
+    /**
+     * @var Client
+     */
+    protected $client;
     /**
      * @var object
      */
     private $fields;
 
     /**
-     * @var SystemProperties
-     */
-    protected $sys;
-
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
      * Entry constructor.
      *
-     * @param object           $fields
+     * @param object $fields
      * @param SystemProperties $sys
-     * @param Client|null      $client
+     * @param Client|null $client
      */
-    public function __construct($fields, SystemProperties $sys, Client $client = null)
+    public function __construct($fields, SystemProperties $sys, DeliveryClient $client = null)
     {
         parent::__construct($sys->getSpace()->getLocales());
 
@@ -44,9 +47,9 @@ class DynamicEntry extends LocalizedResource implements EntryInterface
         return $this->sys->getId();
     }
 
-    public function getRevision()
+    public function getVersion()
     {
-        return $this->sys->getRevision();
+        return $this->sys->getVersion();
     }
 
     public function getUpdatedAt()
@@ -57,16 +60,6 @@ class DynamicEntry extends LocalizedResource implements EntryInterface
     public function getCreatedAt()
     {
         return $this->sys->getCreatedAt();
-    }
-
-    public function getSpace()
-    {
-        return $this->sys->getSpace();
-    }
-
-    public function getContentType()
-    {
-        return $this->sys->getContentType();
     }
 
     public function __call($name, $arguments)
@@ -135,30 +128,32 @@ class DynamicEntry extends LocalizedResource implements EntryInterface
         trigger_error('Call to undefined method ' . __CLASS__ . '::' . $name . '()', E_USER_ERROR);
     }
 
-    private function formatSimpleValueForJson($value, $type, $linkType)
+    public function getContentType()
     {
-        switch ($type) {
-            case 'Symbol':
-            case 'Text':
-            case 'Integer':
-            case 'Number':
-            case 'Boolean':
-            case 'Location':
-            case 'Object':
-                return $value;
-            case 'Date':
-                return $this->formatDateForJson($value);
-            case 'Link':
-                return $value ? (object) [
-                    'sys' => (object) [
-                        'type' => 'Link',
-                        'linkType' => $linkType,
-                        'id' => $value->getId()
-                    ]
-                ] : null;
-            default:
-                throw new \InvalidArgumentException('Unexpected field type "' . $type . '" encountered while trying to serialze to JSON.');
+        return $this->sys->getContentType();
+    }
+
+    public function getSpace()
+    {
+        return $this->sys->getSpace();
+    }
+
+    public function jsonSerialize()
+    {
+        $fields = new \stdClass;
+        $contentType = $this->getContentType();
+        foreach ($this->fields as $fieldName => $fieldData) {
+            $fields->$fieldName = new \stdClass;
+            $fieldConfig = $contentType->getField($fieldName);
+            foreach ($fieldData as $locale => $data) {
+                $fields->$fieldName->$locale = $this->formatValueForJson($data, $fieldConfig);
+            }
         }
+
+        return (object)[
+            'sys' => $this->sys,
+            'fields' => $fields
+        ];
     }
 
     private function formatValueForJson($value, ContentTypeField $fieldConfig)
@@ -174,22 +169,30 @@ class DynamicEntry extends LocalizedResource implements EntryInterface
         return $this->formatSimpleValueForJson($value, $type, $fieldConfig->getLinkType());
     }
 
-    public function jsonSerialize()
+    private function formatSimpleValueForJson($value, $type, $linkType)
     {
-        $fields = new \stdClass;
-        $contentType = $this->getContentType();
-        foreach ($this->fields as $fieldName => $fieldData) {
-            $fields->$fieldName = new \stdClass;
-            $fieldConfig = $contentType->getField($fieldName);
-            foreach ($fieldData as $locale => $data) {
-                $fields->$fieldName->$locale = $this->formatValueForJson($data, $fieldConfig);
-            }
+        switch ($type) {
+            case 'Symbol':
+            case 'Text':
+            case 'Integer':
+            case 'Number':
+            case 'Boolean':
+            case 'Location':
+            case 'Object':
+                return $value;
+            case 'Date':
+                return $this->formatDateForJson($value);
+            case 'Link':
+                return $value ? (object)[
+                    'sys' => (object)[
+                        'type' => 'Link',
+                        'linkType' => $linkType,
+                        'id' => $value->getId()
+                    ]
+                ] : null;
+            default:
+                throw new \InvalidArgumentException('Unexpected field type "' . $type . '" encountered while trying to serialze to JSON.');
         }
-
-        return (object) [
-            'sys' => $this->sys,
-            'fields' => $fields
-        ];
     }
 
     /**
@@ -203,6 +206,6 @@ class DynamicEntry extends LocalizedResource implements EntryInterface
     private function formatDateForJson(\DateTimeImmutable $dt)
     {
         $dt = $dt->setTimezone(new \DateTimeZone('Etc/UTC'));
-        return $dt->format('Y-m-d\TH:i:s.') . str_pad(floor($dt->format('u')/1000), 3, '0', STR_PAD_LEFT) . 'Z';
+        return $dt->format('Y-m-d\TH:i:s.') . str_pad(floor($dt->format('u') / 1000), 3, '0', STR_PAD_LEFT) . 'Z';
     }
 }

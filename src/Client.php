@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2015-2017 Contentful GmbH
+ * @copyright 2015-2016 Contentful GmbH
  * @license   MIT
  */
 
@@ -8,12 +8,8 @@ namespace Contentful;
 
 use Contentful\Log\NullLogger;
 use Contentful\Log\StandardTimer;
-use Contentful\Exception\ResourceNotFoundException;
-use Contentful\Exception\RateLimitExceededException;
-use Contentful\Exception\InvalidQueryException;
-use Contentful\Exception\AccessTokenInvalidException;
-use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Exception\ClientException;
 use Contentful\Log\LoggerInterface;
 use GuzzleHttp\Psr7;
@@ -24,7 +20,7 @@ use GuzzleHttp\Psr7;
 abstract class Client
 {
     /**
-     * @var GuzzleClientInterface
+     * @var GuzzleClient
      */
     private $httpClient;
 
@@ -42,37 +38,34 @@ abstract class Client
      * @var string
      */
     private $api;
-    
-    /**
-     * @var string
-     */
-    private $token;
 
     /**
      * Client constructor.
      *
-     * @param string                $token
-     * @param string                $baseUri
-     * @param string                $api
-     * @param LoggerInterface       $logger
-     * @param GuzzleClientInterface $guzzle
+     * @param string $token
+     * @param string $baseUri
+     * @param string $api
+     * @param LoggerInterface $logger
      */
-    public function __construct($token, $baseUri, $api, LoggerInterface $logger = null, GuzzleClientInterface $guzzle = null)
+    public function __construct($token, $baseUri, $api, LoggerInterface $logger = null)
     {
-        $this->token = $token;
+        $stack = HandlerStack::create();
+        $stack->push(new BearerToken($token));
         $this->logger = $logger ?: new NullLogger();
 
         $this->api = $api;
         $this->baseUri = $baseUri;
-        $this->httpClient = $guzzle ?: new GuzzleClient();
+        $this->httpClient = new GuzzleClient([
+            'handler' => $stack
+        ]);
     }
 
     /**
      * @param string $method
      * @param string $path
-     * @param array  $options
+     * @param array $options
      *
-     * @return array
+     * @return array|object
      */
     protected function request($method, $path, array $options = [])
     {
@@ -103,39 +96,9 @@ abstract class Client
         return $result;
     }
 
-    private function doRequest($request, $options)
-    {
-        try {
-            return $this->httpClient->send($request, $options);
-        } catch (ClientException $e) {
-            $response = $e->getResponse();
-            if ($response->getStatusCode() === 404) {
-                $result = $this->decodeJson($response->getBody());
-                throw new ResourceNotFoundException($result['message'], 0, $e);
-            }
-            if ($response->getStatusCode() === 429) {
-                throw new RateLimitExceededException(null, 0, $e);
-            }
-            if ($response->getStatusCode() === 400) {
-                $result = $this->decodeJson($response->getBody());
-                if ($result['sys']['id'] === 'InvalidQuery') {
-                    throw new InvalidQueryException($result['message'], 0, $e);
-                }
-            }
-            if ($response->getStatusCode() === 401) {
-                $result = $this->decodeJson($response->getBody());
-                if ($result['sys']['id'] === 'AccessTokenInvalid') {
-                    throw new AccessTokenInvalidException($result['message'], 0, $e);
-                }
-            }
-
-            throw $e;
-        }
-    }
-
     /**
-     * @param  string            $method
-     * @param  string            $path
+     * @param  string $method
+     * @param  string $path
      * @param  array|string|null $query
      *
      * @return Psr7\Request
@@ -151,7 +114,6 @@ abstract class Client
         ];
 
         $uri = Psr7\Uri::resolve(Psr7\uri_for($this->baseUri), $path);
-
         if ($query) {
             if (is_array($query)) {
                 $query = http_build_query($query, null, '&', PHP_QUERY_RFC3986);
@@ -165,17 +127,9 @@ abstract class Client
         return new Psr7\Request($method, $uri, [
             'User-Agent' => $this->getUserAgent(),
             'Content-Type' => $contentTypes[$this->api],
-            'Accept-Encoding' => 'gzip',
-            'Authorization' => 'Bearer ' . $this->token,
+            'Accept-Encoding' => 'gzip'
         ], null);
     }
-
-    /**
-     * The name of the library to be used in the User-Agent header.
-     *
-     * @return string
-     */
-    abstract protected function getUserAgentAppName();
 
     /**
      * Returns the value of the User-Agent header for any requests made to Contentful
@@ -194,15 +148,35 @@ abstract class Client
     }
 
     /**
+     * The name of the library to be used in the User-Agent header.
+     *
+     * @return string
+     */
+    abstract protected function getUserAgentAppName();
+
+    private function doRequest($request, $options)
+    {
+        try {
+            return $this->httpClient->send($request, $options);
+        } catch (ClientException $e) {
+            if ($e->getResponse()->getStatusCode() === 404) {
+                throw new ResourceNotFoundException(null, 0, $e);
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * @param  string $json JSON encoded object or array
      *
-     * @return array
+     * @return object|array
      *
      * @throws \RuntimeException On invalid JSON
      */
     protected function decodeJson($json)
     {
-        $result = json_decode($json, true);
+        $result = json_decode($json);
         if ($result === null) {
             throw new \RuntimeException(json_last_error_msg(), json_last_error());
         }

@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2015-2016 Contentful GmbH
+ * @copyright 2015 Contentful GmbH
  * @license   MIT
  */
 
@@ -24,11 +24,6 @@ class Locale implements \JsonSerializable
     private $name;
 
     /**
-     * @var string
-     */
-    private $fallbackCode;
-
-    /**
      * @var bool
      */
     private $default;
@@ -36,18 +31,16 @@ class Locale implements \JsonSerializable
     /**
      * Locale constructor.
      *
-     * @param string $code          Locale code
-     * @param string $name          Human readable name
-     * @param string $fallbackCode  The code of the locale used for for the fallback
-     * @param bool   $default       Whether this is the default locale
+     * @param string $code    Locale code
+     * @param string $name    Human readable name
+     * @param bool   $default Whether this is the default locale
      *
      * @api
      */
-    public function __construct($code, $name, $fallbackCode, $default = false)
+    public function __construct($code, $name, $default = false)
     {
         $this->code = $code;
         $this->name = $name;
-        $this->fallbackCode = $fallbackCode;
         $this->default = $default;
     }
 
@@ -88,18 +81,6 @@ class Locale implements \JsonSerializable
     }
 
     /**
-     * Returns the code of the locale used for for the fallback
-     *
-     * @return string
-     *
-     * @api
-     */
-    public function getFallbackCode()
-    {
-        return $this->fallbackCode;
-    }
-
-    /**
      * Returns an object to be used by `json_encode` to serialize objects of this class.
      *
      * @return object
@@ -113,8 +94,7 @@ class Locale implements \JsonSerializable
         return (object) [
             'code' => $this->code,
             'default' => $this->default,
-            'name' => $this->name,
-            'fallbackCode' => $this->fallbackCode
+            'name' => $this->name
         ];
     }
 }

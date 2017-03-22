@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2015-2017 Contentful GmbH
+ * @copyright 2015 Contentful GmbH
  * @license   MIT
  */
 
@@ -9,6 +9,7 @@ namespace Contentful\Delivery;
 use Contentful\Client as BaseClient;
 use Contentful\Delivery\Synchronization\Manager;
 use Contentful\Query as BaseQuery;
+use Contentful\Log\LoggerInterface;
 
 /**
  * A Client is used to communicate the Contentful Delivery API.
@@ -21,7 +22,7 @@ use Contentful\Query as BaseQuery;
  */
 class Client extends BaseClient
 {
-    const VERSION = '0.7.0-dev';
+    const VERSION = '0.6.5-beta';
 
     /**
      * @var ResourceBuilder
@@ -39,80 +40,27 @@ class Client extends BaseClient
     private $preview;
 
     /**
-     * @var string|null
-     */
-    private $defaultLocale;
-
-    /**
      * Client constructor.
      *
-     * @param string                $token         Delivery API Access Token for the space used with this Client
-     * @param string                $spaceId       ID of the space used with this Client.
-     * @param bool                  $preview       True to use the Preview API.
-     * @param string|null           $defaultLocale The default is to fetch the Space's default locale. Set to a locale
-     *                                             string, e.g. "en-US" to fetch content in that locale. Set it to "*"
-     *                                             to fetch content in all locales.
-     * @param array                 $options       An array of optional configuration options. The following keys are possible:
-     *                                              * guzzle      Override the guzzle instance used by the Contentful client
-     *                                              * logger      Inject a Contentful logger
-     *                                              * uriOverride Override the uri that is used to connect to the Contentful API (e.g. 'https://cdn.contentful.com/'). The trailing slash is required.
+     * @param string $token Delivery API Access Token for the space used with this Client
+     * @param string $spaceId ID of the space used with this Client.
+     * @param bool $preview True to use the Preview API.
+     * @param LoggerInterface $logger
      *
      * @api
      */
-    public function __construct($token, $spaceId, $preview = false, $defaultLocale = null, array $options = [])
+    public function __construct($token, $spaceId, $preview = false, LoggerInterface $logger = null)
     {
-        $baseUri = $preview ? 'https://preview.contentful.com/' : 'https://cdn.contentful.com/';
+        $baseUri = $preview ? 'https://preview.contentful.com/spaces/' : 'https://cdn.contentful.com/spaces/';
         $api = $preview ? 'PREVIEW' : 'DELIVERY';
-
-        $options = array_replace([
-            'guzzle' => null,
-            'logger' => null,
-            'uriOverride' => null,
-        ], $options);
-
-        $guzzle = $options['guzzle'];
-        $logger = $options['logger'];
-        $uriOverride = $options['uriOverride'];
-
-        if ($uriOverride !== null) {
-            $baseUri = $uriOverride;
-        }
-        $baseUri .= 'spaces/';
 
         $instanceCache = new InstanceCache;
 
-        parent::__construct($token, $baseUri . $spaceId . '/', $api, $logger, $guzzle);
+        parent::__construct($token, $baseUri . $spaceId . '/', $api, $logger);
 
         $this->preview = $preview;
         $this->instanceCache = $instanceCache;
         $this->builder = new ResourceBuilder($this, $instanceCache, $spaceId);
-        $this->defaultLocale = $defaultLocale;
-    }
-
-    /**
-     * The name of the library to be used in the User-Agent header.
-     *
-     * @return string
-     */
-    protected function getUserAgentAppName()
-    {
-        return 'ContentfulCDA/' . self::VERSION;
-    }
-
-    /**
-     * @param  string      $id
-     * @param  string|null $locale
-     *
-     * @return Asset
-     *
-     * @api
-     */
-    public function getAsset($id, $locale = null)
-    {
-        $locale = $locale === null ? $this->defaultLocale : $locale;
-        return $this->requestAndBuild('GET', 'assets/' . $id, [
-            'query' => ['locale' => $locale]
-        ]);
     }
 
     /**
@@ -126,13 +74,16 @@ class Client extends BaseClient
     {
         $query = $query !== null ? $query : new BaseQuery;
         $queryData = $query->getQueryData();
-        if (!isset($queryData['locale'])) {
-            $queryData['locale'] = $this->defaultLocale;
-        }
+        $queryData['locale'] = '*';
 
         return $this->requestAndBuild('GET', 'assets', [
             'query' => $queryData
         ]);
+    }
+
+    private function requestAndBuild($method, $path, array $options = [])
+    {
+        return $this->builder->buildObjectsFromRawData($this->request($method, $path, $options));
     }
 
     /**
@@ -167,22 +118,6 @@ class Client extends BaseClient
     }
 
     /**
-     * @param  string      $id
-     * @param  string|null $locale
-     *
-     * @return EntryInterface
-     *
-     * @api
-     */
-    public function getEntry($id, $locale = null)
-    {
-        $locale = $locale === null ? $this->defaultLocale : $locale;
-        return $this->requestAndBuild('GET', 'entries/' . $id, [
-            'query' => ['locale' => $locale]
-        ]);
-    }
-
-    /**
      * @param  BaseQuery $query
      *
      * @return \Contentful\ResourceArray
@@ -193,9 +128,7 @@ class Client extends BaseClient
     {
         $query = $query !== null ? $query : new BaseQuery;
         $queryData = $query->getQueryData();
-        if (!isset($queryData['locale'])) {
-            $queryData['locale'] = $this->defaultLocale;
-        }
+        $queryData['locale'] = '*';
 
         return $this->requestAndBuild('GET', 'entries', [
             'query' => $queryData
@@ -243,13 +176,49 @@ class Client extends BaseClient
     }
 
     /**
+     * @param  string $id
+     *
+     * @return EntryInterface
+     *
+     * @api
+     */
+    public function getEntry($id)
+    {
+        if ($this->instanceCache->hasEntry($id)) {
+            return $this->instanceCache->getEntry($id);
+        }
+
+        return $this->requestAndBuild('GET', 'entries/' . $id, [
+            'query' => ['locale' => '*']
+        ]);
+    }
+
+    /**
+     * @param  string $id
+     *
+     * @return Asset
+     *
+     * @api
+     */
+    public function getAsset($id)
+    {
+        if ($this->instanceCache->hasAsset($id)) {
+            return $this->instanceCache->getAsset($id);
+        }
+
+        return $this->requestAndBuild('GET', 'assets/' . $id, [
+            'query' => ['locale' => '*']
+        ]);
+    }
+
+    /**
      * Revive JSON previously cached.
      *
      * @param  string $json
      *
      * @return Asset|ContentType|DynamicEntry|Space|Synchronization\DeletedAsset|Synchronization\DeletedEntry|\Contentful\ResourceArray
      *
-     * @throws SpaceMismatchException When attempting to revive JSON belonging to a different space
+     * @throws SpaceMismatchException When attemptiting to revive JSON belonging to a different space
      *
      * @api
      */
@@ -309,8 +278,13 @@ class Client extends BaseClient
         return new Manager($this, $this->builder);
     }
 
-    private function requestAndBuild($method, $path, array $options = [])
+    /**
+     * The name of the library to be used in the User-Agent header.
+     *
+     * @return string
+     */
+    protected function getUserAgentAppName()
     {
-        return $this->builder->buildObjectsFromRawData($this->request($method, $path, $options));
+        return 'ContentfulCDA/' . self::VERSION;
     }
 }

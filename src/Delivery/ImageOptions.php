@@ -216,7 +216,7 @@ class ImageOptions
      */
     public function setFormat($format = null)
     {
-        $validValues = ['png', 'jpg', 'webp'];
+        $validValues = ['png', 'jpg'];
 
         if ($format !== null && !in_array($format, $validValues, true)) {
             throw new \InvalidArgumentException('Unknown format "' . $format . '" given. Expected "png", "jpg" or null');
@@ -394,7 +394,7 @@ class ImageOptions
     }
 
     /**
-     * Add rounded corners to your image or crop to a circle/ellipsis
+     * Add rounded corners to your image or crop to a circle/elipsis
      *
      * @param  float|null $radius A float value defining the corner radius.
      *

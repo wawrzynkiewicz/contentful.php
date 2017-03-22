@@ -35,7 +35,7 @@ class Query
     private $skip;
 
     /**
-     * The field to order the retrieved results by
+     * The field to order the retrived results by
      *
      * @var string|null
      */
@@ -69,13 +69,6 @@ class Query
      */
     private $whereConditions = [];
 
-    /**
-     * Filter entity result
-     *
-     * @var array
-     */
-    private $select = [];    
-    
     /**
      * Query constructor.
      *
@@ -111,26 +104,13 @@ class Query
             $data['order'] = $dir . $this->order;
         }
         foreach ($this->whereConditions as $whereCondition) {
-            $key = $whereCondition['field'];
-            if ($whereCondition['operator'] !== null) {
-                $key .= '[' . $whereCondition['operator'] . ']';
+            $key = $whereCondition->field;
+            if ($whereCondition->operator !== null) {
+                $key .= '[' . $whereCondition->operator . ']';
             }
-            $data[$key] = $whereCondition['value'];
+            $data[$key] = $whereCondition->value;
         }
-        
-        if (count($this->select) > 0) {
-            // We always request all metadata to ensure the ResourceBuilder has everything it needs.
-            $select = ['sys'];
-            foreach ($this->select as $part) {
-                if ($part === 'sys' || strpos($part, 'sys.') === 0) {
-                    continue;
-                }
-                $select[] = $part;
-            }
 
-            $data['select'] = implode(',', $select);
-        }
-        
         return $data;
     }
 
@@ -160,7 +140,7 @@ class Query
     public function setSkip($skip)
     {
         if ($skip !== null && $skip < 0) {
-            throw new \RangeException('$skip must be 0 or larger, ' . $skip . ' given.');
+            throw new \RangeException('$skip must be 0 or larget, ' . $skip . ' given.');
         }
 
         $this->skip = $skip;
@@ -194,7 +174,7 @@ class Query
     public function setLimit($limit)
     {
         if ($limit !== null && ($limit < 1 || $limit > 1000)) {
-            throw new \RangeException('$maxResults must be between 1 and 1000, ' . $limit . ' given.');
+            throw new \RangeException('$maxResults must be between 0 and 1000, ' . $limit . ' given.');
         }
 
         $this->limit = $limit;
@@ -361,31 +341,12 @@ class Query
             $value = $value->queryStringFormatted();
         }
 
-        $this->whereConditions[] = [
+        array_push($this->whereConditions, (object) [
             'field' => $field,
             'value' => $value,
             'operator' => $operator
-        ];
+        ]);
 
         return $this;
     }
-
-    /**
-     * The select operator allows you to choose what to return from an entity.
-     * You provide one or multiple JSON paths and the API will return the properties at those paths.
-     *
-     * To only request the metadata simply query for 'sys'.
-     *
-     * @param  array $select
-     *
-     * @return $this
-     *
-     * @api
-     */
-    public function select(array $select)
-    {
-        $this->select = $select;
-
-        return $this;
-    }    
 }

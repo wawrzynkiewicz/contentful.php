@@ -4,7 +4,9 @@
  * @license   MIT
  */
 
-namespace Contentful\Delivery;
+namespace Contentful\Management;
+
+use Contentful\Delivery\Locale;
 
 /**
  * The Space class represents a single space identified by it's ID and holding some metadata.
@@ -34,9 +36,9 @@ class Space implements \JsonSerializable
     /**
      * Space constructor.
      *
-     * @param string           $name     Name of this space.
-     * @param Locale[]         $locales  Locales supported by this space.
-     * @param SystemProperties $sys      Metadata for this space.
+     * @param string $name Name of this space.
+     * @param Locale[] $locales Locales supported by this space.
+     * @param SystemProperties $sys Metadata for this space.
      */
     public function __construct($name, array $locales, SystemProperties $sys)
     {
@@ -101,7 +103,7 @@ class Space implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        return (object) [
+        return (object)[
             'sys' => $this->sys,
             'name' => $this->name,
             'locales' => $this->locales

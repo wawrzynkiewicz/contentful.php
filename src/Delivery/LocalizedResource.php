@@ -1,12 +1,10 @@
 <?php
-/*
- * @copyright 2015-2017 Contentful GmbH
+/**
+ * @copyright 2015 Contentful GmbH
  * @license   MIT
  */
 
 namespace Contentful\Delivery;
-
-use Contentful\Delivery\Space;
 
 /**
  * A LocalizedResource can store information for multiple locales. The methods in this base class allow switching between the locales.
@@ -18,14 +16,14 @@ abstract class LocalizedResource
      *
      * @var string
      */
-    private $localeCode;
+    protected $localeCode;
 
     /**
      * List of codes for all the locales available in the space this resource belongs to
      *
      * @var string[]
      */
-    protected $availableLocales = [];
+    private $availableLocales = [];
 
     /**
      * LocalizedResource constructor.
@@ -89,8 +87,7 @@ abstract class LocalizedResource
      *
      * @api
      */
-    protected function getLocaleFromInput($input = null)
-    {
+    protected function getLocaleFromInput($input = null) {
         if ($input instanceof Locale) {
             $input = $input->getCode();
         }
@@ -104,33 +101,5 @@ abstract class LocalizedResource
         }
 
         return $input;
-    }
-
-    /**
-     * @param array                      $valueMap
-     * @param string                     $localeCode
-     * @param \Contentful\Delivery\Space $space
-     *
-     * @return string|null The locale code for which a value can be found. null if the end of the chain has been reached.
-     *
-     * @throws \RuntimeException If we detect an endless loop
-     */
-    protected function loopThroughFallbackChain(array $valueMap, $localeCode, Space $space)
-    {
-        $loopCounter = 0;
-        while (!isset($valueMap[$localeCode])) {
-            $localeCode = $space->getLocale($localeCode)->getFallbackCode();
-            if ($localeCode === null) {
-                // We've reach the end of the fallback chain and there's no value
-                return null;
-            }
-            $loopCounter++;
-            // The number is arbitrary
-            if ($loopCounter > 128) {
-                throw new \RuntimeException('Possible endless loop when trying to walk the locale fallback chain.');
-            }
-        }
-
-        return $localeCode;
     }
 }

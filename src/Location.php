@@ -80,8 +80,7 @@ class Location implements \JsonSerializable
      *
      * @api
      */
-    public function queryStringFormatted()
-    {
+    public function queryStringFormatted() {
         return $this->latitude . ',' . $this->longitude;
     }
 }

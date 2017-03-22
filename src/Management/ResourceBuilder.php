@@ -4,13 +4,26 @@
  * @license   MIT
  */
 
-namespace Contentful\Delivery;
+namespace Contentful\Management;
 
-use Contentful\Delivery\Client as DeliveryClient;
+use Contentful\Delivery\Asset;
+use Contentful\Delivery\ContentType;
+use Contentful\Delivery\ContentTypeField;
+use Contentful\Management\DynamicEntry;
+use Contentful\Delivery\File;
+use Contentful\Delivery\ImageFile;
+use Contentful\Delivery\InstanceCache;
+use Contentful\Delivery\Link;
+use Contentful\Delivery\Locale;
+use Contentful\Management\Space;
+use Contentful\Delivery\SpaceMismatchException;
 use Contentful\Delivery\Synchronization\DeletedAsset;
 use Contentful\Delivery\Synchronization\DeletedEntry;
 use Contentful\Location;
 use Contentful\ResourceArray;
+use Contentful\Delivery\Client as DeliveryClient;
+use Contentful\Management\Client as ManagementClient;
+use Contentful\Management\SystemProperties;
 
 /**
  * The ResourceBuilder is responsible for turning the responses from the API into instances of PHP classes.
@@ -20,9 +33,14 @@ use Contentful\ResourceArray;
 class ResourceBuilder
 {
     /**
+     * @var ManagementClient
+     */
+    private $managementClient;
+
+    /**
      * @var DeliveryClient
      */
-    private $client;
+    private $deliveryClient;
 
     /**
      * @var InstanceCache
@@ -43,9 +61,10 @@ class ResourceBuilder
      * @param InstanceCache $instanceCache
      * @param string $spaceId
      */
-    public function __construct(DeliveryClient $client, InstanceCache $instanceCache, $spaceId)
+    public function __construct(DeliveryClient $deliveryClient, ManagementClient $managementClient, InstanceCache $instanceCache, $spaceId)
     {
-        $this->client = $client;
+        $this->deliveryClient = $deliveryClient;
+        $this->managementClient = $managementClient;
         $this->instanceCache = $instanceCache;
         $this->spaceId = $spaceId;
     }
@@ -139,14 +158,21 @@ class ResourceBuilder
     private function buildSystemProperties($sys)
     {
         return new SystemProperties(
+
             isset($sys->id) ? $sys->id : null,
             isset($sys->type) ? $sys->type : null,
             isset($sys->space) ? $this->getSpace($sys->space->sys->id) : null,
-            isset($sys->contentType) ? $this->client->getContentType($sys->contentType->sys->id) : null,
-            isset($sys->revision) ? $sys->revision : null,
+            isset($sys->contentType) ? $this->deliveryClient->getContentType($sys->contentType->sys->id) : null,
+            isset($sys->publishedCounter) ? $sys->publishedCounter : null,
+            isset($sys->publishedVersion) ? $sys->publishedVersion : null,
+            isset($sys->version) ? $sys->version : null,
+            isset($sys->firstPublishedAt) ? new \DateTimeImmutable($sys->firstPublishedAt) : null,
             isset($sys->createdAt) ? new \DateTimeImmutable($sys->createdAt) : null,
+            isset($sys->createdBy) ? $this->getLink($sys->createdBy) : null,
+            isset($sys->publishedAt) ? new \DateTimeImmutable($sys->publishedAt) : null,
+            isset($sys->publishedBy) ? $this->getLink($sys->publishedBy) : null,
             isset($sys->updatedAt) ? new \DateTimeImmutable($sys->updatedAt) : null,
-            isset($sys->deletedAt) ? new \DateTimeImmutable($sys->deletedAt) : null
+            isset($sys->updatedBy) ? $this->getLink($sys->updatedBy) : null
         );
     }
 
@@ -165,7 +191,15 @@ class ResourceBuilder
             throw new SpaceMismatchException('This ResourceBuilder is responsible for the space "' . $this->spaceId . '" but was asked to build a resource for the space "' . $spaceId . '"."');
         }
 
-        return $this->client->getSpace();
+        return $this->deliveryClient->getSpace();
+    }
+
+    private function getLink($data)
+    {
+        //TODO
+        //var_dump($data);
+
+        return null;
     }
 
     /**
@@ -187,10 +221,9 @@ class ResourceBuilder
         $entry = new DynamicEntry(
             $fields,
             $sys,
-            $this->client
+            $this->deliveryClient
         );
-        $this->instanceCache->addEntry($entry);
-
+        //$this->instanceCache->addEntry($entry); //TODO
         return $entry;
     }
 
@@ -372,25 +405,34 @@ class ResourceBuilder
     }
 
     /**
+     * Build objects based on PHP classes from the raw JSON based objects.
+     *
      * @param  object $data
      *
-     * @return DeletedAsset
+     * @return Asset|ContentType|DynamicEntry|Space|DeletedAsset|DeletedEntry|ResourceArray
      */
-    private function buildDeletedAsset($data)
+    public function buildResponseFromRawData($data)
     {
-        $sys = $this->buildSystemProperties($data->sys);
-        return new DeletedAsset($sys);
-    }
+        $type = $data->sys->type;
+        if ($type === 'Array' && isset($data->includes)) {
+            $this->processIncludes($data->includes);
+        }
 
-    /**
-     * @param  object $data
-     *
-     * @return DeletedEntry
-     */
-    private function buildDeletedEntry($data)
-    {
-        $sys = $this->buildSystemProperties($data->sys);
-        return new DeletedEntry($sys);
+        switch ($type) {
+            case 'Array':
+                return $this->buildArray($data);
+            case 'Asset':
+                return $this->buildAsset($data);
+            case 'ContentType':
+                return $this->buildContentType($data);
+            case 'Entry':
+                return $this->buildEntry($data);
+            case 'Space':
+                return $this->buildSpace($data);
+
+            default:
+                throw new \InvalidArgumentException('Unexpected type "' . $type . '"" while trying to build object.');
+        }
     }
 
     /**

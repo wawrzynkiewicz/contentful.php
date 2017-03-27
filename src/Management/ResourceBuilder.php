@@ -7,8 +7,8 @@
 namespace Contentful\Management;
 
 use Contentful\Delivery\Asset;
-use Contentful\Delivery\ContentType;
-use Contentful\Delivery\ContentTypeField;
+use Contentful\Management\ContentType;
+use Contentful\Management\ContentTypeField;
 use Contentful\Management\DynamicEntry;
 use Contentful\Delivery\File;
 use Contentful\Delivery\ImageFile;
@@ -162,7 +162,7 @@ class ResourceBuilder
             isset($sys->id) ? $sys->id : null,
             isset($sys->type) ? $sys->type : null,
             isset($sys->space) ? $this->getSpace($sys->space->sys->id) : null,
-            isset($sys->contentType) ? $this->deliveryClient->getContentType($sys->contentType->sys->id) : null,
+            isset($sys->contentType) ? $this->managementClient->getContentType($sys->contentType->sys->id) : null,
             isset($sys->publishedCounter) ? $sys->publishedCounter : null,
             isset($sys->publishedVersion) ? $sys->publishedVersion : null,
             isset($sys->version) ? $sys->version : null,
@@ -357,9 +357,9 @@ class ResourceBuilder
      */
     private function buildContentType($data)
     {
-        if ($this->instanceCache->hasContentType($data->sys->id)) {
+        /*if ($this->instanceCache->hasContentType($data->sys->id)) {
             return $this->instanceCache->getContentType($data->sys->id);
-        }
+        }*/
 
         $sys = $this->buildSystemProperties($data->sys);
         $fields = array_map([$this, 'buildContentTypeField'], $data->fields);
@@ -371,7 +371,7 @@ class ResourceBuilder
             $displayField,
             $sys
         );
-        $this->instanceCache->addContentType($contentType);
+        //$this->instanceCache->addContentType($contentType);
 
         return $contentType;
     }

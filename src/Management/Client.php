@@ -8,7 +8,7 @@ namespace Contentful\Management;
 
 use Contentful\Client as BaseClient;
 use Contentful\Delivery\Asset;
-use Contentful\Delivery\ContentType;
+use Contentful\Management\ContentType;
 use Contentful\Delivery\EntryInterface;
 use Contentful\Delivery\InstanceCache;
 use Contentful\Delivery\Link;
@@ -67,6 +67,31 @@ class Client extends BaseClient
     }
 
     /**
+     * @param  string $id
+     *
+     * @return EntryInterface
+     *
+     * @api
+     */
+    public function getEntry($id)
+    {
+        /*if ($this->instanceCache->hasEntry($id)) {
+            return $this->instanceCache->getEntry($id);
+        }*/
+
+        return $this->requestAndBuild('GET', 'entries/' . $id, [
+            'query' => ['locale' => '*']
+        ]);
+    }
+
+    private function requestAndBuild($method, $path, array $options = [])
+    {
+        if ($method == 'GET')
+            return $this->builder->buildObjectsFromRawData($this->request($method, $path, $options));
+        return $this->builder->buildResponseFromRawData($this->request($method, $path, $options));
+    }
+
+    /**
      * @param  ContentType $contentType
      * @param  array $fields
      *
@@ -85,11 +110,42 @@ class Client extends BaseClient
         return $this->requestAndBuild('POST', 'entries', $options);
     }
 
-    private function requestAndBuild($method, $path, array $options = [])
+    /**
+     * @param  string $id
+     *
+     * @return ContentType
+     *
+     * @api
+     */
+    public function getContentType($id)
     {
-        if ($method == 'GET')
-            return $this->builder->buildObjectsFromRawData($this->request($method, $path, $options));
-        return $this->builder->buildResponseFromRawData($this->request($method, $path, $options));
+        /*if ($this->instanceCache->hasContentType($id)) {
+            return $this->instanceCache->getContentType($id);
+        }*/
+
+        return $this->requestAndBuild('GET', 'content_types/' . $id);
+    }
+
+    /**
+     * @param  string $id
+     * @param  int $version
+     * @param  ContentType $contentType
+     * @param  array $fields
+     *
+     * @return EntryInterface
+     *
+     * @api
+     */
+    public function updateEntry($id, $version, array $fields)
+    {
+        //transfer payload into JSON
+        $payload = json_encode(['fields' => $fields]);
+
+        $options = ['headers' => ['ContentType' => 'application/vnd.contentful.management.v1+json',
+            'X-Contentful-Version' => $version],
+            'body' => $payload];
+
+        return $this->requestAndBuild('PUT', 'entries/' . $id, $options);
     }
 
     /**

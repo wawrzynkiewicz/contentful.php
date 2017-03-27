@@ -83,6 +83,12 @@ abstract class Client
         try {
             $response = $this->doRequest($request, $options);
             $result = $this->decodeJson($response->getBody());
+
+            //TODO - debug JSON format of delivery API
+            //var_dump((string)$response->getBody());
+            //var_dump($result);
+            //exit();
+
         } catch (\Exception $e) {
             $timer->stop();
             $this->logger->log($this->api, $request, $timer, $response, $e);

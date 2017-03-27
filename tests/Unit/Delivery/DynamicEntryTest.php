@@ -1,21 +1,18 @@
 <?php
 /**
- * @copyright 2015-2017 Contentful GmbH
+ * @copyright 2015-2016 Contentful GmbH
  * @license   MIT
  */
 
 namespace Contentful\Tests\Unit\Delivery;
 
 use Contentful\Delivery\Asset;
-use Contentful\Delivery\Client;
 use Contentful\Delivery\ContentType;
 use Contentful\Delivery\ContentTypeField;
 use Contentful\Delivery\DynamicEntry;
-use Contentful\Delivery\Link;
 use Contentful\Delivery\Locale;
 use Contentful\Delivery\Space;
 use Contentful\Delivery\SystemProperties;
-use Contentful\Exception\ResourceNotFoundException;
 
 class DynamicEntryTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,14 +37,14 @@ class DynamicEntryTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $defaultLocale = new Locale('en-US', 'English (United States)', null, true);
+        $defaultLocale = new Locale('en-US', 'English (United States)', true);
 
         $space->method('getId')
             ->willReturn('cfexampleapi');
         $space->method('getLocales')
             ->willReturn([
                 $defaultLocale,
-                new Locale('tlh', 'Klingon', 'en-US')
+                new Locale('tlh', 'Klingon')
             ]);
         $space->method('getDefaultLocale')
             ->willReturn($defaultLocale);
@@ -93,27 +90,27 @@ class DynamicEntryTest extends \PHPUnit_Framework_TestCase
             ->willReturn('nyancat');
 
         $this->entry = new DynamicEntry(
-            [
-                'name' => [
+            (object) [
+                'name' => (object) [
                     'en-US' => 'Nyan Cat',
                     'tlh' => 'Nyan vIghro\''
                 ],
-                'likes' => [
+                'likes' => (object) [
                     'en-US' => ['rainbows', 'fish']
                 ],
-                'color' => [
+                'color' => (object) [
                     'en-US' => 'rainbow',
                 ],
-                'bestFriend' => [
+                'bestFriend' => (object) [
                     'en-US' => $mockEntry
                 ],
-                'birthday' => [
+                'birthday' => (object) [
                     'en-US' => new \DateTimeImmutable('2011-04-04T22:00:00+00:00')
                 ],
-                'lives' => [
+                'lives' => (object) [
                     'en-US' =>  1337
                 ],
-                'image' => [
+                'image' => (object) [
                     'en-US' => $mockAsset
                 ],
             ],
@@ -132,65 +129,6 @@ class DynamicEntryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new \DateTimeImmutable('2013-09-04T09:19:39.027Z'), $entry->getUpdatedAt());
         $this->assertEquals($this->space, $entry->getSpace());
         $this->assertEquals($this->ct, $entry->getContentType());
-        $this->assertEquals('happycat', $entry->getBestFriend()->getId());
-    }
-
-    public function testLinkResolution()
-    {
-        $ct = new ContentType(
-            'Cat',
-            'Meow.',
-            [
-                new ContentTypeField('name', 'Name', 'Text', null, null, null, true, true),
-                new ContentTypeField('friend', 'Friend', 'Link', null, null, false, false),
-            ],
-            'name',
-            new SystemProperties('cat', 'ContentType', $this->space, null, 2, new \DateTimeImmutable('2013-06-27T22:46:12.852Z'), new \DateTimeImmutable('2013-09-02T13:14:47.863Z'))
-        );
-
-        $client = $this->getMockBuilder(Client::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $crookshanksEntry = new DynamicEntry(
-            [
-                'name' => [
-                    'en-US' => 'Crookshanks'
-                ]
-            ],
-            new SystemProperties('crookshanks', 'Entry', $this->space, $ct, 5, new \DateTimeImmutable('2013-06-27T22:46:19.513Z'), new \DateTimeImmutable('2013-09-04T09:19:39.027Z')),
-            $client
-        );
-
-        $garfieldEntry = new DynamicEntry(
-            [
-                'name' => [
-                    'en-US' => 'Garfield'
-                ],
-                'friend' => [
-                    'en-US' => new Link('crookshanks', 'Entry')
-                ]
-            ],
-            new SystemProperties('garfield', 'Entry', $this->space, $ct, 56, new \DateTimeImmutable('2013-06-27T22:46:19.513Z'), new \DateTimeImmutable('2013-09-04T09:19:39.027Z')),
-            $client
-        );
-
-        $client->expects($this->any())
-            ->method('resolveLink')
-            ->willReturnCallback(function(Link $link) use ($garfieldEntry, $crookshanksEntry) {
-                $id = $link->getId();
-
-                if ($id === 'garfield') {
-                    return $garfieldEntry;
-                }
-                if ($id === 'crookshanks') {
-                    return $crookshanksEntry;
-                }
-
-                return new ResourceNotFoundException;
-            });
-
-        $this->assertSame($crookshanksEntry, $garfieldEntry->getFriend());
     }
 
     /**
@@ -210,11 +148,11 @@ class DynamicEntryTest extends \PHPUnit_Framework_TestCase
         );
 
         $entry = new DynamicEntry(
-            [
-                'name' => [
+            (object) [
+                'name' => (object) [
                     'en-US' => 'Test Entry'
                 ],
-                'youTubeId' => [
+                'youTubeId' => (object) [
                     'en-US' => 'l6xdPQ_O8e8',
                 ]
             ],
@@ -223,71 +161,6 @@ class DynamicEntryTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals('l6xdPQ_O8e8', $entry->getYouTubeId());
-    }
-
-    public function testOneToManyReferenceWithMissingEntry()
-    {
-        $ct = new ContentType(
-            'Cat',
-            'Meow.',
-            [
-                new ContentTypeField('name', 'Name', 'Text', null, null, null, true, true),
-                new ContentTypeField('friends', 'Friends', 'Array', null, 'Link', false, false),
-            ],
-            'name',
-            new SystemProperties('cat', 'ContentType', $this->space, null, 2, new \DateTimeImmutable('2013-06-27T22:46:12.852Z'), new \DateTimeImmutable('2013-09-02T13:14:47.863Z'))
-        );
-
-        $client = $this->getMockBuilder(Client::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $crookshanksEntry = new DynamicEntry(
-            [
-                'name' => [
-                    'en-US' => 'Crookshanks'
-                ],
-                'friends' => [
-                    'en-US' => []
-                ]
-            ],
-            new SystemProperties('crookshanks', 'Entry', $this->space, $ct, 5, new \DateTimeImmutable('2013-06-27T22:46:19.513Z'), new \DateTimeImmutable('2013-09-04T09:19:39.027Z')),
-            $client
-        );
-
-        $garfieldEntry = new DynamicEntry(
-            [
-                'name' => [
-                    'en-US' => 'Garfield'
-                ],
-                'friends' => [
-                    'en-US' => [new Link('crookshanks', 'Entry'), new Link('nyancat', 'Entry')]
-                ]
-            ],
-            new SystemProperties('garfield', 'Entry', $this->space, $ct, 56, new \DateTimeImmutable('2013-06-27T22:46:19.513Z'), new \DateTimeImmutable('2013-09-04T09:19:39.027Z')),
-            $client
-        );
-
-        $client->expects($this->any())
-            ->method('resolveLink')
-            ->willReturnCallback(function(Link $link) use ($garfieldEntry, $crookshanksEntry) {
-                $id = $link->getId();
-
-                if ($id === 'garfield') {
-                    return $garfieldEntry;
-                }
-                if ($id === 'crookshanks') {
-                    return $crookshanksEntry;
-                }
-
-                return new ResourceNotFoundException;
-            });
-
-
-        $friends = $garfieldEntry->getFriends();
-
-        $this->assertCount(1, $friends);
-        $this->assertSame($crookshanksEntry, $friends[0]);
     }
 
     /**

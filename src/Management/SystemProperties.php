@@ -6,7 +6,7 @@
 
 namespace Contentful\Management;
 
-use Contentful\Delivery\ContentType;
+use Contentful\Management\ContentType;
 use Contentful\Delivery\Link;
 use Contentful\Delivery\Space;
 

@@ -1,7 +1,7 @@
 contentful.php
 ===============
 
-[![Build Status](https://travis-ci.org/contentful/contentful.php.svg?branch=master)](https://travis-ci.org/contentful/contentful.php)
+[![Build Status](https://travis-ci.org/contentful/contentful.php.svg)](https://travis-ci.org/contentful/contentful.php)
 
 PHP SDK for [Contentful's][1] Content Delivery API.
 
@@ -82,13 +82,13 @@ Documentation
 =============
 
 * [SDK API Reference][3]
-* Check the [Contentful for PHP][4] page for tutorials, example apps, and more information on other ways of using PHP with Contentful
+* Check the [Contentful for PHP] page for tutorials, example apps, and more information on other ways of using PHP with Contentful
 * [CDA REST API reference][5] for additional details on the Delivery API
 
 License
 =======
 
-Copyright (c) 2015-2017 Contentful GmbH. Code released under the MIT license. See [LICENSE][2] for further details.
+Copyright (c) 2015 Contentful GmbH. Code released under the MIT license. See [LICENSE][2] for further details.
 
  [1]: https://www.contentful.com
  [2]: LICENSE

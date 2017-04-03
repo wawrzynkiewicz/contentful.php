@@ -112,13 +112,33 @@ class LogEntry implements \Serializable
 
     public function serialize()
     {
-        return serialize((object) [
-            'api' => $this->api,
-            'duration' => $this->duration,
-            'exception' => $this->exception,
-            'request' => \GuzzleHttp\Psr7\str($this->request),
-            'response' => \GuzzleHttp\Psr7\str($this->response)
-        ]);
+        try {
+            if ($this->response != null) {
+                return serialize((object)[
+                    'api' => $this->api,
+                    'duration' => $this->duration,
+                    'exception' => $this->exception,
+                    'request' => \GuzzleHttp\Psr7\str($this->request),
+                    'response' => \GuzzleHttp\Psr7\str($this->response)
+                ]);
+            } else {
+                return serialize((object)[
+                    'api' => $this->api,
+                    'duration' => $this->duration,
+                    'exception' => $this->exception,
+                    'request' => \GuzzleHttp\Psr7\str($this->request),
+                    'response' => null
+                ]);
+            }
+        } catch (\Exception $e) {
+            return serialize((object)[
+                'api' => null,
+                'duration' => null,
+                'exception' => $this->exception,
+                'request' => null,
+                'response' => null
+            ]);
+        }
     }
 
     public function unserialize($serialized)

@@ -287,6 +287,11 @@ class ResourceBuilder
             case 'Object':
                 return $value;
             case 'Date':
+                if (is_int($value)) {
+                    $dt = new \DateTimeImmutable("now", new \DateTimeZone('UTC'));
+                    $dt->setTimestamp($value);
+                    return $dt;
+                }
                 return new \DateTimeImmutable($value, new \DateTimeZone('UTC'));
             case 'Location':
                 return new Location($value->lat, $value->lon);

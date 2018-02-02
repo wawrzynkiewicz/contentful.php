@@ -6,7 +6,6 @@ use Contentful\Log\NullLogger;
 use Contentful\Log\LoggerInterface;
 use Contentful\Delivery\Client as DeliveryClient;
 use Contentful\Management\Client as ManagementClient;
-use Contentful\Clients;
 
 /**
  * Abstract client for common code for the different clients.

@@ -77,7 +77,6 @@ abstract class Client
             unset($options['query']);
         }
         $request = $this->buildRequest($method, $path, $query);
-
         // We define this variable so it's also available in the catch block.
         $response = null;
         try {
